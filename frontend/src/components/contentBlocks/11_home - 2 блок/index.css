@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --blue: #377dff;
+  --dark-blue: #21325b;
+  --violet: #b253f6;
+  --grey-back: #e7e7ec;
+  --dark-text: #2f2d51;
+  --light-text: #77838f;
+}
+
+body {
+  font-family: "Jost", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--dark-text);
+}
+
+.container {
+  max-width: 1153px;
+  margin: 88px auto 9px;
+}
+
+.container h1 {
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 50.58px;
+}
+
+.container h4 {
+  font-size: 18px;
+  color: var(--light-text);
+  line-height: 30px;
+  margin-bottom: 55px;
+}
+
+.card-title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26.01px;
+}
+.card-text {
+  font-size: 16px;
+  color: var(--light-text);
+}
+
+.row .col-sm-6 {
+  margin-bottom: 87px;
+}
