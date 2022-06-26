@@ -1,9 +1,9 @@
 import React from "react";
 import "./index.css";
 
-export default function Home_2 {
-    return(
-        <div className="container">
+export default function Home_2() {
+  return (
+    <div className="container">
       <h1 className="text-capitalize text-center">How Can I help You</h1>
       <h4 className="text-capitalize fw-normal text-center">
         Lorem ipsum dolor sit amet mollis fellis dapibus
@@ -46,7 +46,9 @@ export default function Home_2 {
               </div>
               <div className="col-md-9">
                 <div className="card-body p-0">
-                  <h5 className="card-title text-capitalize">Real deal coaching</h5>
+                  <h5 className="card-title text-capitalize">
+                    Real deal coaching
+                  </h5>
                   <p className="card-text fw-normal text-capitalize">
                     Reference site about Lorem Ipsum, giving information on its
                     origins, as well as a random Lipsum genera.
@@ -104,6 +106,5 @@ export default function Home_2 {
         </div>
       </div>
     </div>
-
-    );
+  );
 }
