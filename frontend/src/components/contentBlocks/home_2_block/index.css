@@ -6,6 +6,7 @@
   --grey-back: #e7e7ec;
   --dark-text: #2f2d51;
   --light-text: #77838f;
+  --light-back: #e5e5e5;
 }
 
 body {
@@ -13,6 +14,7 @@ body {
   margin: 0;
   padding: 0;
   color: var(--dark-text);
+  background-color: var(--light-back);
 }
 
 .container {
