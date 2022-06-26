@@ -15,7 +15,7 @@ export default function Home2 {
             <div className="row g-0">
               <div className="col-md-3">
                 <img
-                  src="public/cloud.svg"
+                  src="/images/cloud.svg"
                   className="img-fluid mx-auto d-block"
                   alt="cloud"
                 />
@@ -39,7 +39,7 @@ export default function Home2 {
             <div className="row g-0">
               <div className="col-md-3">
                 <img
-                  src="public/analytics.svg"
+                  src="/images/analytics.svg"
                   className="img-fluid mx-auto d-block"
                   alt="analytics"
                 />
@@ -61,7 +61,7 @@ export default function Home2 {
             <div className="row g-0">
               <div className="col-md-3">
                 <img
-                  src="public/presentation.svg"
+                  src="/images/presentation.svg"
                   className="img-fluid mx-auto d-block"
                   alt="presentation"
                 />
@@ -85,7 +85,7 @@ export default function Home2 {
             <div className="row g-0">
               <div className="col-md-3">
                 <img
-                  src="public/strategy.svg"
+                  src="/images/strategy.svg"
                   className="img-fluid mx-auto d-block"
                   alt="strategy"
                 />
