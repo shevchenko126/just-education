@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 
-export default function Home2 {
+export default function Home_2 {
     return(
         <div className="container">
       <h1 className="text-capitalize text-center">How Can I help You</h1>
