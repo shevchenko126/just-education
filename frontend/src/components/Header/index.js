@@ -8,45 +8,45 @@ import shop from './images/shop.svg';
 
 const header = () => {
   return (
-    <header class="header">
-      <div class="container header__container d-flex justify-content-between align-items-center">
-        <div class="logo">
+    <header className="header">
+      <div className="container header__container d-flex justify-content-between align-items-center">
+        <div className="logo">
           <img src={logo} alt="logo" />
         </div>
-        <div class="header__right d-flex align-items-center">
-          <nav class="nav">
-            <div class="nav__item">
-              <a href="" class="nav__link">home</a>
+        <div className="header__right d-flex align-items-center">
+          <nav className="nav">
+            <div className="nav__item">
+              <a href="" className="nav__link">home</a>
             </div>
-            <div class="nav__item">
-              <a href="" class="nav__link active has-child-active">courses</a>
+            <div className="nav__item">
+              <a href="" className="nav__link active has-child-active">courses</a>
             </div>
-            <div class="nav__item">
-              <a href="" class="nav__link has-child">pages</a>
+            <div className="nav__item">
+              <a href="" className="nav__link has-child">pages</a>
             </div>
-            <div class="nav__item">
-              <a href="" class="nav__link has-child">blog</a>
+            <div className="nav__item">
+              <a href="" className="nav__link has-child">blog</a>
             </div>
-            <div class="nav__item">
-              <a href="" class="nav__link">shop</a>
+            <div className="nav__item">
+              <a href="" className="nav__link">shop</a>
             </div>
-            <div class="nav__item">
-              <a href="" class="nav__link">contact</a>
+            <div className="nav__item">
+              <a href="" className="nav__link">contact</a>
             </div>
           </nav>
-          <div class="header__buttons d-flex align-items-center">
-            <div class="header__buttons-button">
+          <div className="header__buttons d-flex align-items-center">
+            <div className="header__buttons-button">
               <a href="">
                 <img src={ search } alt="search" />
               </a>
             </div>
-            <div class="header__buttons-button">
+            <div className="header__buttons-button">
               <a href="">
                 <img src={ user } alt="user" />
               </a>
             </div>
-            <div class="header__buttons-button position-relative">
-              <div class="header__bouttons-count">2</div>
+            <div className="header__buttons-button position-relative">
+              <div className="header__bouttons-count">2</div>
               <a href="">
                 <img src={shop} alt="shop" />
               </a>
