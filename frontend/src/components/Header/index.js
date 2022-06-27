@@ -14,35 +14,40 @@ const header = () => {
           <img src={logo} alt="logo" />
         </div>
         <div className="header__right d-flex align-items-center">
-          <nav className="nav">
-            <div className="nav__item">
-              <a href="" className="nav__link">home</a>
+          <div className="menu">
+            <div className="header__burger">
+              <span className=""></span>
             </div>
-            <div className="nav__item">
-              <a href="" className="nav__link active has-child-active">courses</a>
-            </div>
-            <div className="nav__item">
-              <a href="" className="nav__link has-child">pages</a>
-            </div>
-            <div className="nav__item">
-              <a href="" className="nav__link has-child">blog</a>
-            </div>
-            <div className="nav__item">
-              <a href="" className="nav__link">shop</a>
-            </div>
-            <div className="nav__item">
-              <a href="" className="nav__link">contact</a>
-            </div>
-          </nav>
+            <nav className="nav">
+              <li className="nav__item">
+                <a href="" className="nav__link">home</a>
+              </li>
+              <li className="nav__item">
+                <a href="" className="nav__link active has-child-active">courses</a>
+              </li>
+              <li className="nav__item">
+                <a href="" className="nav__link has-child">pages</a>
+              </li>
+              <li className="nav__item">
+                <a href="" className="nav__link has-child">blog</a>
+              </li>
+              <li className="nav__item">
+                <a href="" className="nav__link">shop</a>
+              </li>
+              <li className="nav__item">
+                <a href="" className="nav__link">contact</a>
+              </li>
+            </nav>
+          </div>
           <div className="header__buttons d-flex align-items-center">
             <div className="header__buttons-button">
               <a href="">
-                <img src={ search } alt="search" />
+                <img src={search} alt="search" />
               </a>
             </div>
             <div className="header__buttons-button">
               <a href="">
-                <img src={ user } alt="user" />
+                <img src={user} alt="user" />
               </a>
             </div>
             <div className="header__buttons-button position-relative">
