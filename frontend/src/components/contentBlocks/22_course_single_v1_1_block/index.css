@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --blue: #377dff;
+  --dark-blue: #21325b;
+  --violet: #b253f6;
+  --grey-back: #e7e7ec;
+  --light-back: #f7f9fb;
+  --dark-text: #2f2d51;
+  --light-text: #77838f;
+  --button-color: #4a8f9f;
+}
+
+body {
+  font-family: "Jost", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--dark-text);
+  background-color: var(--light-back);
+}
+
+.container {
+  max-width: 770px;
+  margin-top: 12px;
+  margin-left: 394px;
+  margin-bottom: 50px;
+  padding: 0;
+}
+
+.header {
+  max-width: 554px;
+}
+
+.course-title {
+  position: relative;
+}
+.save {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.header h1 {
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 50.58px;
+}
+.course-describe {
+  max-width: 654px;
+  color: var(--light-text);
+}
+
+.rating-info {
+  width: 496px;
+}
+
+.rating-info h6 {
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.rating-info p {
+  line-height: 30px;
+  font-size: 14px;
+  color: var(--light-text);
+}
+.content-line {
+  width: 550px;
+  margin-top: 30px;
+  margin-left: 22px;
+}
+
+.content-line h5 {
+  line-height: 28.9px;
+}
+
+.grey {
+  color: var(--light-text);
+}
+
+.img2 {
+  position: relative;
+  top: -21.5px;
+}
+
+.course-description h4 {
+  line-height: 31.79px;
+}
+
+.course-description p {
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.course-description .green {
+  color: var(--button-color);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 23.12px;
+}
+
+.what-learn ul {
+  position: relative;
+}
+.what-learn li {
+  font-size: 16px;
+  line-height: 45px;
+  list-style-image: url(../../../../public/images/icon.svg);
+}
+
+.what-learn li:before {
+  position: absolute;
+  margin: auto 0;
+}
+
+.requirements {
+  list-style-image: url(../../../../public/images/Ellipse\ 38.svg);
+  font-size: 16px;
+  line-height: 45px;
+}
