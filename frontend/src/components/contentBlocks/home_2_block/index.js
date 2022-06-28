@@ -11,7 +11,7 @@ export default function Home_2() {
 
       <div className="row">
         <div className="col-sm-6">
-          <div className="card border-0">
+          <div className="card border-0 bg-transparent">
             <div className="row g-0">
               <div className="col-md-3">
                 <img
@@ -35,7 +35,7 @@ export default function Home_2() {
           </div>
         </div>
         <div className="col-sm-6">
-          <div className="card border-0">
+          <div className="card border-0 bg-transparent">
             <div className="row g-0">
               <div className="col-md-3">
                 <img
@@ -59,7 +59,7 @@ export default function Home_2() {
           </div>
         </div>
         <div className="col-sm-6">
-          <div className="card border-0 mb-3">
+          <div className="card border-0 mb-3 bg-transparent">
             <div className="row g-0">
               <div className="col-md-3">
                 <img
@@ -83,7 +83,7 @@ export default function Home_2() {
           </div>
         </div>
         <div className="col-sm-6">
-          <div className="card border-0">
+          <div className="card border-0 bg-transparent">
             <div className="row g-0">
               <div className="col-md-3">
                 <img
