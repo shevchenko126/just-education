@@ -10,6 +10,9 @@ import './index.css'
       </h3>
     </div>
     <div class="row">
+      <input type="text" class="form-control filter__search-instructors" id="searchInstructors" placeholder="Search"/>
+    </div>
+    <div class="row">
 
       <div class="form-check">
         <input class="form-check-input filter__checkbox_custom" type="checkbox" value="" id="filterCategoryArt"/>
