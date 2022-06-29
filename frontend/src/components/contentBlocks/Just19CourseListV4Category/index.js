@@ -3,56 +3,56 @@ import './index.css'
 
  const Just19CourseListV4Category = () => {
   return (
-  <div class="container filter__wrap">
-    <div class="row">
-      <h3 class="col filter__title">
+  <div className="container filter__wrap">
+    <div className="row">
+      <h3 className="col filter__title">
         Category
       </h3>
     </div>
-    <div class="row">
-      <input type="text" class="form-control filter__search-instructors" id="searchInstructors" placeholder="Search"/>
+    <div className="row">
+      <input type="text" className="form-control filter__search-instructors" id="searchInstructors" placeholder="Search"/>
     </div>
-    <div class="row">
+    <div className="row">
 
-      <div class="form-check">
-        <input class="form-check-input filter__checkbox_custom" type="checkbox" value="" id="filterCategoryArt"/>
-        <label class="form-check-label filter__items" for="filterCategoryArt">
-          Art (<span class="CategoryArtAmount">8</span>)
+      <div className="form-check">
+        <input className="form-check-input filter__checkbox_custom" type="checkbox" value="" id="filterCategoryArt"/>
+        <label className="form-check-label filter__items" for="filterCategoryArt">
+          Art (<span className="CategoryArtAmount">8</span>)
         </label>
       </div>
 
-      <div class="form-check">
-        <input class="form-check-input  filter__checkbox_custom" type="checkbox" value="" id="filterCategoryExercise" checked/>
-        <label class="form-check-label  filter__items" for="filterCategoryExercise">
-          Exercise (<span class="CategoryExerciseAmount">8</span>)
+      <div className="form-check">
+        <input className="form-check-input  filter__checkbox_custom" type="checkbox" value="" id="filterCategoryExercise" checked/>
+        <label className="form-check-label  filter__items" for="filterCategoryExercise">
+          Exercise (<span className="CategoryExerciseAmount">8</span>)
         </label>
       </div>
 
-      <div class="form-check">
-        <input class="form-check-input filter__checkbox_custom" type="checkbox" value="" id="filterCategoryMaterialDesign"/>
-        <label class="form-check-label filter__items" for="filterCategoryMaterialDesign">
-          Material Design (<span class="CategoryMaterialDesignAmount">7</span>)
+      <div className="form-check">
+        <input className="form-check-input filter__checkbox_custom" type="checkbox" value="" id="filterCategoryMaterialDesign"/>
+        <label className="form-check-label filter__items" for="filterCategoryMaterialDesign">
+          Material Design (<span className="CategoryMaterialDesignAmount">7</span>)
         </label>
       </div>
 
-      <div class="form-check">
-        <input class="form-check-input  filter__checkbox_custom" type="checkbox" value="" id="filterCategorySoftwareDevelopment"/>
-        <label class="form-check-label  filter__items" for="filterCategorySoftwareDevelopment">
-          Software Development (<span class="CategorySoftwareDevelopmentAmount">6</span>)
+      <div className="form-check">
+        <input className="form-check-input  filter__checkbox_custom" type="checkbox" value="" id="filterCategorySoftwareDevelopment"/>
+        <label className="form-check-label  filter__items" for="filterCategorySoftwareDevelopment">
+          Software Development (<span className="CategorySoftwareDevelopmentAmount">6</span>)
         </label>
       </div>
 
-      <div class="form-check">
-        <input class="form-check-input  filter__checkbox_custom" type="checkbox" value="" id="filterCategoryMusic"/>
-        <label class="form-check-label  filter__items" for="filterCategoryMusic">
-          Music (<span class="CategoryMusicAmount">6</span>)
+      <div className="form-check">
+        <input className="form-check-input  filter__checkbox_custom" type="checkbox" value="" id="filterCategoryMusic"/>
+        <label className="form-check-label  filter__items" for="filterCategoryMusic">
+          Music (<span className="CategoryMusicAmount">6</span>)
         </label>
       </div>
 
-      <div class="form-check">
-        <input class="form-check-input  filter__checkbox_custom" type="checkbox" value="" id="filterCategoryPhotography"/>
-        <label class="form-check-label  filter__items" for="filterCategoryPhotography">
-          Photography (<span class="CategoryPhotographyAmount">6</span>)
+      <div className="form-check">
+        <input className="form-check-input  filter__checkbox_custom" type="checkbox" value="" id="filterCategoryPhotography"/>
+        <label className="form-check-label  filter__items" for="filterCategoryPhotography">
+          Photography (<span className="CategoryPhotographyAmount">6</span>)
         </label>
       </div>
 
