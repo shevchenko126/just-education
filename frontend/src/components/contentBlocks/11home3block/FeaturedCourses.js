@@ -1,7 +1,7 @@
 import './FeaturedCourses.css';
-import './css/colors.css'
+import CourseCard from '../CommonItems/CourseCard/CourseCard'
 
-function FeaturedCourses() {
+const FeaturedCourses = () => {
     return(
          <section className="coursers">
             <div className="coursers__background-image">
@@ -12,50 +12,11 @@ function FeaturedCourses() {
                     </div>
                     <div className="cources__slider">
                         <div className="cources__slider-cards">
-                            <a href="#" className="courses__card" id="card-1" title="Course...">
-                                <div className="courses__card-background">
-                                    <img src={require("./img/card_bg.png")} alt="Course" id="card-bacground"/>
-                                    <img src={require("./img/instructor_bg.png")} alt="Instructor" className="courses__card-instructor" id="card-instructor"/>
-                                    <div className="views-likes">
-                                        <div className="view"></div>
-                                        <div className="like"></div>
-                                    </div>
-                                    <div className="label label-best_seller" id="label-best_seller"></div>
-                                    <div className="label label-featured" id="label-featured"></div>  
-                                </div>
-                                <div className="text-block">
-                                    <p className="courses__card-sabject">Photography</p>
-                                    <div className="courses__card-title">feshion photography from professional</div>
-                                    <div className="courses__card-attributes">
-                                        <div className="attributes__raiting">
-                                            <div className="attributes__raiting-item">
-                                                <div className="rating-star star-checked" id="raiting-star"></div>
-                                                <div className="rating-star star-checked" id="raiting-star"></div>
-                                                <div className="rating-star star-checked" id="raiting-star"></div>
-                                                <div className="rating-star star-checked" id="raiting-star"></div>
-                                                <div className="rating-star star-checked" id="raiting-star"></div>
-                                            </div> 
-                                            <div className="attributes__raiting-item">4.87</div>
-                                            <div className="attributes__raiting-item reviews">3.8</div>
-                                        </div>
-                                        <div>
-                                            <div className="attributes__durations">
-                                                <div className="attributes__duration readers" id="lessons">5</div>
-                                                <div className="attributes__duration hours" id="hours">8</div>
-                                                <div className="attributes__duration minutes" id="minutes">12</div>
-                                            </div>
-                                            <div className="attributes__prices">
-                                                <div className="old-price" id="old-price">959</div>
-                                                <div className="new-price" id="new-price">415.99</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="courses__card" id="card-2"></a>
-                            <a href="#" class="courses__card" id="card-3"></a>
-                            <a href="#" class="courses__card" id="card-4"></a>
-                            <a href="#" class="courses__card" id="card-5"></a>
+                            <CourseCard cardId="c1" status="-" lessons="4" hours="2" minutes="12" oldPrice="959" newPrice="415.99"/>
+                            <CourseCard cardId="c2" status="0" lessons="5" hours="5" minutes="13" oldPrice="848" newPrice="315.99"/>
+                            <CourseCard cardId="c3" status="1" lessons="2" hours="6" minutes="42" oldPrice="636" newPrice="215.99"/>
+                            <CourseCard cardId="c4" status="-" lessons="3" hours="7" minutes="15" oldPrice="747" newPrice="315.99"/>
+                            <CourseCard cardId="c5" status="0" lessons="3" hours="8" minutes="32" oldPrice="1000" newPrice="499.99"/>
                         </div>
                     </div>
                     <div className="dots">
