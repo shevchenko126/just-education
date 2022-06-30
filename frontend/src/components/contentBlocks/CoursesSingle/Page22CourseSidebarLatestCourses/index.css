@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --blue: #377dff;
+  --dark-blue: #21325b;
+  --violet: #b253f6;
+  --grey-back: #e7e7ec;
+  --dark-text: #2f2d51;
+  --light-text: #77838f;
+}
+
+body {
+  font-family: "Jost", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--dark-text);
+}
+
+#latest-courses__block {
+    font-family: 'Jost', sans-serif;
+    width: 370px;
+    height: 563px;
+    border: 1px solid #E7E7EC;
+    border-radius: 3px;
+    box-shadow: 0px 8px 15px 0px #8C98A4;
+    color: #2f2d51;
+}
+
+#latest-courses__list {
+    margin: 0 0 21px 0;
+
+}
+
+#latest-courses__title {
+    margin: 24px 170px 20px 33px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+#latest-courses__image {
+    width: 100px;
+    height: 90px;
+    margin: 5px 19px 5px 26px;
+    border-radius: 8px;
+}
+
+#latest-courses__image-block {
+    padding: 0 0 0 0;
+}
+
+#latest-courses__texts {
+    margin-left: 21px; 
+    font-size: 16px;
+    padding: 9px 0 0 0;
+} 
+
+.course-name__link {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 0px 11px 0px;
+    text-decoration: none;
+    color: #2f2d51;
+}
+
+#latest-courses__old-price {
+    text-decoration: line-through;
+    color: #77838F;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+#latest-courses__new-price {
+    font-size: 16px;
+    font-weight: 600;
+}
