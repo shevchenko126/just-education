@@ -55,7 +55,7 @@ body {
     left: -65px;
     width: 44px;
     height: 28px;
-    background-image: url(./img/quotes.svg);
+    background-image: url(../../../../public/images/icons/quotes.svg);
     background-repeat: no-repeat;
     fill: #2F2D51;
 }
@@ -89,13 +89,13 @@ body {
     border-radius: 50%;
 }
 .reviews__info_1 {
-    background-image: url(./img/surface.svg);
+    background-image: url(../../../../public/images/surface.svg);
 }
 .reviews__info_2 {
-    background-image: url(./img/surface.svg);
+    background-image: url(../../../../public/images/surface.svg);
 }
 .reviews__info_3 {
-    background-image: url(./img/surface.svg);
+    background-image: url(../../../../public/images/surface.svg);
 }
 .reviews__students-person {
     padding-left: 104px;

@@ -38,7 +38,7 @@ body {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background-image: url(./img/Surface.svg);
+    background-image: url(../../../../../../public/images/Surface_instructor.svg);
     background-repeat: no-repeat;
 }
 .instructor__info {
@@ -75,7 +75,7 @@ body {
     position: absolute;
     top: 45px;
     left: -13px;
-    background-image: url(./img/Vector.png);
+    background-image: url(../../../../../../public/images/icons/vector.png);
     background-repeat: no-repeat;
     width: 16px; 
     height: 16px;
@@ -89,7 +89,7 @@ body {
     position: absolute;
     top: 45px;
     left: -20px;
-    background-image: url(./img/Reviews.svg);
+    background-image: url(../../../../../../public/images/icons/reviews.svg);
     background-repeat: no-repeat;
     width: 20px; 
     height: 20px;
@@ -103,7 +103,7 @@ body {
     position: absolute;
     top: 43px;
     left: -22px;
-    background-image: url(./img/Students.svg);
+    background-image: url(../../../../../../public/images/icons/students.svg);
     background-repeat: no-repeat;
     width: 18px; 
     height: 25px;
@@ -117,7 +117,7 @@ body {
     position: absolute;
     top: 45px;
     left: -15px;
-    background-image: url(./img/Courses.svg);
+    background-image: url(../../../../../../public/images/icons/courses.svg);
     background-repeat: no-repeat;
     width: 16px; 
     height: 18px;

@@ -5,6 +5,7 @@ import Tabs from './components/CoursesSingle/TopSingle/Tabs';
 
 
 
+
 function App() {
   return (
     <>
