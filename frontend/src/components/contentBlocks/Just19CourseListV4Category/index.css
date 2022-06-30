@@ -1,0 +1,95 @@
+:root {
+  --dark-text: #2f2d51;
+  --light-text: #77838f;
+  --color-border-elements: rgba(231, 231, 236, 1);
+  --color-background-elements: rgba(255, 255, 255, 1);
+}
+
+.filter__wrap {
+  font-family: 'Jost', sans-serif;
+  width: 270px;
+  min-height: 210px;
+  border: 1px solid var(--color-border-elements);
+  border-radius: 4px;
+  padding: 26px 31px;
+  background-color: var(--color-background-elements);
+}
+
+.filter__title {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+  color: var(--dark-text);
+  background: url(./img/filter_title_dash.svg) no-repeat right center;
+  padding-left: 0px;
+}
+
+.filter__search-instructors {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  text-transform: capitalize;
+  color: rgba(119, 131, 143, 1);
+  background-color: var(--color-background-elements);
+  background-image: url(./img/loupe1.svg);
+  background-position: 90% center; 
+  background-repeat: no-repeat;
+  padding-right: 10px;
+  border-radius: 4px;
+}
+
+.filter__search-instructors:focus {
+  border-color: var(--color-border-elements);
+  box-shadow: 0 0 0 0.25rem rgba(231, 231, 236, 0.5);
+  background-image: none;
+}
+
+.filter__items {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 40px;
+  color: var(--light-text);
+}
+
+.filter__checkbox_custom:checked[type=checkbox] {
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='-3 -3 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='6' height='6' rx='2' fill='%23090761'/%3E%3C/svg%3E");
+}
+
+.filter__checkbox_custom:checked {
+  background-color: var(--color-background-elements);
+  border-color: rgba(9, 7, 97, 1);
+}
+
+.filter__checkbox_custom[type=checkbox] {
+  border-radius: 0.25em;
+}
+
+.filter__checkbox_custom {
+  width: 1em;
+  height: 1em;
+  margin-top: 0.7em;
+  vertical-align: top;
+  background-color: var(--color-background-elements);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 1px solid var(--color-border-elements);
+}
+
+.filter__checkbox_custom:focus {
+  border-color: var(--color-border-elements);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(231, 231, 236, 0.5);
+}
+
+.filter__checkbox_custom:focus:checked {
+  border-color: rgba(9, 7, 97, 1);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(231, 231, 236, 0.5);
+}
