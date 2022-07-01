@@ -17,7 +17,8 @@ class Material(models.Model):
     duration = models.DurationField(verbose_name="Тривалість", blank=True, null=True)
 
     def save(self, *args, **kwargs):
-        self.create_date = timezone.now()
+        if not self.create_date:
+            self.create_date = timezone.now()
         return super(Material, self).save(*args, **kwargs)
 
     def __str__(self):
