@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class Material(models.Model):
     TYPE_CHOICES = (("video", "Відео"), ("read", "Читання"), ("code", "Код"))
     type = models.CharField(verbose_name="Тип", max_length=100, blank=False, null=False, choices=TYPE_CHOICES)
-    file = models.FileField(verbose_name="Файл", upload_to="uploads/", storage=None, max_length=100, blank=True,
+    file = models.FileField(verbose_name="Файл", upload_to="materials", storage=None, max_length=100, blank=True,
                             null=True)
     format = models.CharField(verbose_name="Формат", max_length=20, blank=True, null=True)
     create_date = models.DateTimeField(verbose_name="Дата створення", editable=False)
