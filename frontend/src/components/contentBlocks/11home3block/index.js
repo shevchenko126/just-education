@@ -1,5 +1,5 @@
 import './styles.css';
-import CourseCard from '../CommonItems/CourseCard'
+import CourseCard from '../commonComponents/CourseCard'
 
 const FeaturedCourses = () => {
     return(
