@@ -99,11 +99,11 @@ h3, p, h5{
 }
 
 .view{
-    background-image: url('./img/icons/view.svg');
+    background-image: url('/public/images/icons/view.svg');
 }
 
 .like{
-    background-image: url('./img/icons/heart.svg');
+    background-image: url('/public/images/icons/heart.svg');
 }
 
 .label{
@@ -196,11 +196,11 @@ h3, p, h5{
 }
 
 .star{
-    background-image: url('./img/icons/star.svg');
+    background-image: url('/public/images/icons/star.svg');
 }
 
 .star-checked{
-    background-image: url('./img/icons/star_checked.svg');
+    background-image: url('/public/images/icons/star_checked.svg');
 }
 
 .reviews:before{
@@ -243,7 +243,7 @@ h3, p, h5{
 }
 
 .readers:before{
-    background-image: url('./img/icons/reader.svg');
+    background-image: url('/public/images/icons/reader.svg');
 }
 
 .readers::after{
@@ -251,7 +251,7 @@ h3, p, h5{
 }
 
 .hours:before{
-    background-image: url('./img/icons/clock.svg');
+    background-image: url('/public/images/icons/clock.svg');
 }
 
 .hours::after{

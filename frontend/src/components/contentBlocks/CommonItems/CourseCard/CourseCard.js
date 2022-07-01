@@ -17,8 +17,8 @@ const CourseCard = ({
     return(
         <a href="#" className="courses__card" id={cardId} title="Course...">
         <div className="courses__card-background">
-            <img src={require("./img/card_bg.png")} alt="Course" id="card-bacground"/>
-            <img src={require("./img/instructor_bg.png")} alt="Instructor" className="courses__card-instructor" id="card-instructor"/>
+            <img src={("/images/card_bg.png")} alt="Course" id="card-bacground"/>
+            <img src={("/images/instructor_bg.png")} alt="Instructor" className="courses__card-instructor" id="card-instructor"/>
             <div className="views-likes">
                 <div className="view"></div>
                 <div className="like"></div>
