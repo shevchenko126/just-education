@@ -1,4 +1,4 @@
-import './CourseCard.css';
+import './styles.css';
 
 const CourseCard = ({
     cardId,
