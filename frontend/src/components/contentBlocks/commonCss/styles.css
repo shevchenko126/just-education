@@ -8,5 +8,10 @@
     --light-orange: #FFC78B;
     --light-violet: #B8B2FD;
     --dark-gray-70:rgba(47, 45, 81, 0.7);
-  }
-  
+
+    --font-size-big: 35px;                  /* 2.1875em  h1 */
+    --font-size-medium: 20px;               /* 1.25em  h2 */
+    --font-size-medium-smaller: 18px;       /* 1.125em  h3 */
+    --font-size-small: 16px;                /* 1em  h4, p */
+    --font-size-small-smaller: 14px;        /* 0.875em   h5 */
+  } 

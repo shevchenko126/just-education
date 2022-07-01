@@ -1,9 +1,11 @@
 import './styles.css';
+import RaitingStars from '../RatingStars'
 
 const CourseCard = ({
     cardId,
     status,
     lessons,
+    raiting,
     hours,
     minutes,  
     oldPrice,  
@@ -31,11 +33,7 @@ const CourseCard = ({
             <div className="courses__card-attributes">
                 <div className="attributes__raiting">
                     <div className="attributes__raiting-item">
-                        <div className="rating-star star-checked"></div>
-                        <div className="rating-star star-checked"></div>
-                        <div className="rating-star star-checked"></div>
-                        <div className="rating-star star-checked"></div>
-                        <div className="rating-star star"></div>
+                        <RaitingStars raiting={raiting}/>
                     </div> 
                     <div className="attributes__raiting-item">4.87</div>
                     <div className="attributes__raiting-item reviews">3.8</div>

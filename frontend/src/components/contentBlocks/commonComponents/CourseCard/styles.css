@@ -154,8 +154,9 @@ h3, p, h5{
     height: 180px;
 }
 
-.courses__card-sabject{  
-    margin: 1em 0 0.5rem;
+.courses__card-sabject{
+    font-size: var(--font-size-small);  
+    margin: 16px 0 8px;
 }
 
 .courses__card-title{
@@ -184,23 +185,6 @@ h3, p, h5{
     line-height: 30px;
     color:var(--light-text);
     font-size: var(--font-size-small-smaller);
-}
-
-.rating-star{
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-.star{
-    background-image: url('/public/images/icons/star.svg');
-}
-
-.star-checked{
-    background-image: url('/public/images/icons/star_checked.svg');
 }
 
 .reviews:before{
@@ -285,13 +269,4 @@ h3, p, h5{
 .new-price::before,
 .old-price::before{
     content: '$';
-}
-/* constants */
-
-:root{
-    --font-size-big: 2.1875em;                 /* 35px  h1 */
-    --font-size-medium: 1.25em;                /* 20px  h2 */
-    --font-size-medium-smaller: 1.125em;       /* 18px  h3 */
-    --font-size-small: 1em;                    /* 16px  h4, p */
-    --font-size-small-smaller: 0.875em;        /* 14px  h5 */
 }
