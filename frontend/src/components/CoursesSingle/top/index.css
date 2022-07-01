@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --blue: #377dff;
+  --dark-blue: #21325b;
+  --violet: #b253f6;
+  --grey-back: #e7e7ec;
+  --light-back: #f7f9fb;
+  --dark-text: #2f2d51;
+  --light-text: #77838f;
+  --button-color: #4a8f9f;
+}
+
+body {
+  font-family: "Jost", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--dark-text);
+  background-color: var(--light-back);
+}
+
+.container {
+  max-width: 770px;
+  margin-top: 12px auto 50px;
+  margin-bottom: 50px;
+  padding: 0;
+}
+
+.header {
+  max-width: 554px;
+}
+
+.course-title {
+  position: relative;
+}
+.save {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.header h1 {
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 50.58px;
+}
+.course-describe {
+  max-width: 654px;
+  color: var(--light-text);
+}
+
+.rating-info {
+  width: 496px;
+}
+
+.course-rating .instructor {
+  height: 80px;
+}
+
+.rating-info h6,
+.instructor-block h6 {
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.rating-info p,
+.instructor-block p {
+  line-height: 10px;
+  font-size: 14px;
+  color: var(--light-text);
+}
+
+@media screen and (max-width: 767px) {
+  .course-rating {
+    display: flex;
+    flex-direction: column;
+  }
+  .rating-info {
+    margin-left: 96px !important;
+    margin-top: -15px !important;
+  }
+  .container {
+    margin-left: 10px;
+  }
+}
