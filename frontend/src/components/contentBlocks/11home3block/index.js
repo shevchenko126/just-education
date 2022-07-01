@@ -1,6 +1,7 @@
 import './styles.css';
 import ListCards from '../commonComponents/ListCards';
 import Dots from '../commonComponents/Dots';
+import{pointCard} from '../commonComponents/Dots'
 
 const FeaturedCourses = () => {
     return(
