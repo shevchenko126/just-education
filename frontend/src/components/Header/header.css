@@ -1,0 +1,216 @@
+body {
+  font-family: 'Jost', sans-serif;
+}
+header {
+  position: relative;
+  width: 100%;
+  z-index: 50;
+}
+.logo {
+  z-index: 3;
+}
+.header__container{
+  padding: 19px 15px;
+}
+.header__burger {
+  display: none;
+}
+.nav {
+  margin-right: 15px;
+}
+.nav ul {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.nav__item:not(:last-child) {
+  padding: 0 30px;
+}
+.nav__link {
+  position: relative;
+  color: #77838F;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all .2s ease;
+}
+.nav__link.active,
+.nav__link:hover {
+  color: #2F2D51;
+}
+.nav__link.has-child::after,
+.nav__link.has-child-active::after {
+  content:'';
+  position: absolute;
+  right: -25px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 10px;
+  height: 10px;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+.nav__link.has-child-active::after {
+  background-image: url(./images/arrow-active.svg);
+}
+.nav__link.has-child::after {
+  background-image: url(./images/arrow.svg);
+}
+.header__bouttons-count {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #090761;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 3px;
+  text-align: center;
+}
+.header__buttons-button {
+  margin-right: 15px;
+  z-index: 3;
+}
+@media (max-width:1000px) {
+  .nav {
+    margin-right: 10px;
+  }
+  .nav__item:not(:last-child) {
+    padding: 0 14px;
+  }
+  .nav__link.has-child::after, .nav__link.has-child-active::after {
+    right: -15px;
+  }
+  .header__container {
+    padding: 10px 0;
+  }
+}
+@media (max-width:768px) {
+  .header__cover {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+  }
+  .nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  .header__container {
+    padding: 6px 14px;
+  }
+  .header__burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    z-index: 3;
+    cursor: pointer;
+  }
+  .header__burger span {
+    position: absolute;
+    background-color: #2F2D51;
+    left: 0;
+    top: 9px;
+    width: 100%;
+    height: 2px;
+    transition: all .3s ease 0s;
+  }
+  .header__burger::before,
+  .header__burger::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #2F2D51;
+    transition: all .3s ease 0s;
+  }
+  .header__burger:hover.header__burger::before,
+  .header__burger:hover.header__burger::after {
+    width: 70%;
+  }
+  .header__burger.activeBurger span {
+    transform: scale(0);
+  }
+  .header__burger::before {
+    top: 0;
+  }
+  .header__burger::after {
+    bottom: 0;
+  }
+  .header__burger.activeBurger::before {
+    transform: rotate(45deg);
+    top: 9px;
+  }
+  .header__burger.activeBurger::after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+  }
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(247, 249, 251, 0.6);
+    margin: 85px 0 0;
+    display: block;
+    transform: translateX(-100%);
+    transition: all .3s ease;
+  }
+  .nav.activeBurger {
+    transform: translateX(0);
+  }
+  .nav__item,
+  .nav__item:not(:last-child) {
+    padding: 20px 10px;
+    background-color: #F7F9FB;
+    border-bottom: 1px solid rgba(185, 186, 186, 0.5);
+  }
+  .nav__link.has-child::after, .nav__link.has-child-active::after {
+    right: 75%;
+  }
+  .nav__link {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+  }
+  .header__right {
+    flex-direction: row-reverse;
+  }
+  .header__buttons {
+    margin-right: 25px;
+  }
+  .header__buttons-button {
+    margin: 0 12px;
+  }
+}
+@media (max-width: 390px) {
+  .header__buttons-button {
+    margin: 0 6px;
+  }
+  .header__buttons {
+    margin-right: 10px;
+  }
+}
+@media (max-width: 330px) {
+  .nav {
+    margin-top: 75px;
+  }
+  .logo img {
+    width: 95%;
+  }
+}

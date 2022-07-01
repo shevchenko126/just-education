@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css';
+import './instructor.css';
 
 
 const index = () => {
