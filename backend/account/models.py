@@ -12,7 +12,7 @@ class Student(models.Model):
     
     class Meta:
         verbose_name ="Студент"
-        verbose_name_plural ="Студенты"
+        verbose_name_plural ="Студенти"
   
   
 class Teacher(models.Model):
@@ -22,6 +22,6 @@ class Teacher(models.Model):
         return self.name
     
     class Meta:
-        verbose_name ="Учитель"
-        verbose_name_plural ="Учителя"    
+        verbose_name ="Викладач"
+        verbose_name_plural ="Викладачі"    
     
