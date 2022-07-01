@@ -14,7 +14,7 @@ class Material(models.Model):
     url = models.CharField(verbose_name="Перейти до курсу", max_length=300, blank=True, null=True)
     author = models.ForeignKey(User, verbose_name="Автор", on_delete=models.SET_NULL, blank=True, null=True,
                                related_name="materials")
-    duration = models.DurationField(verbose_name="Тривалість")
+    duration = models.DurationField(verbose_name="Тривалість", blank=True, null=True)
 
     def save(self, *args, **kwargs):
         self.create_date = timezone.now()
