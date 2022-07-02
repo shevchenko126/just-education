@@ -1,0 +1,30 @@
+.dots{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
+.dot{
+    cursor: pointer;
+    height: 8px;
+    width: 8px;
+    margin: 0 8px;
+    background-color: #ffff;
+    opacity: 60%;
+    border-radius: 4px;
+    display: inline-block;
+    transition: all 0.25s ease;
+  }
+
+  
+  .selected,
+  .dot:hover{
+    width: 20px;
+    opacity: 100%;
+    filter: drop-shadow(0 0 5px white);   
+}
+
+.dot:active{
+    filter: drop-shadow(0 0 10px white);
+}  

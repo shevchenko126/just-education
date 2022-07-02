@@ -1,0 +1,124 @@
+:root {
+    --blue: #377dff;
+    --dark-blue: #21325b;
+    --violet: #b253f6;
+    --grey-back: #e7e7ec;
+    --dark-text: #2f2d51;
+    --light-text: #77838f;
+}
+
+body {
+    font-family: 'Jost', sans-serif;
+}
+
+/* 11_home -6 */
+.main-content {
+    min-height: 695px;
+}
+
+.card-head {
+    margin-top: 85px;
+    text-transform: capitalize;
+    font-style: normal;
+    margin-bottom: 45px;
+}
+
+.card-head h2 {
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 51px;
+    color: var(--dark-text);
+}
+
+.card-head h3 {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: var(--light-text);
+}
+
+/* card body */
+
+.card-body {
+    background-color: #fff;
+    padding: 0px;
+    margin: 15px;
+    min-height: 375px;
+    max-width: 370px;
+    border: 1px solid #e7e7ec;
+    box-shadow: 0px 8px 15px rgba(140, 152, 164, 0.1);
+    border-radius: 4px;
+}
+
+.card-image {
+    background-color: var(--dark-text);
+    max-width: 350px;
+    height: 250px;
+    margin: 10px 10px 15px 10px;
+    padding: 0px;
+    border-radius: 4px;
+}
+
+.card-button {
+    padding: 5px 21px;
+    position: absolute;
+    height: 30px;
+    left: 30px;
+    top: 210px;
+    background-color: var(--violet);
+    border-radius: 600px;
+}
+
+.card-button span {
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffffff;
+}
+
+.card-info {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: capitalize;
+    color: var(--light-text);
+}
+
+.name-text {
+    margin: 0px 28px 0px 0px;
+}
+
+.name-img {
+    margin-right: 10px;
+}
+
+.card-title img {
+    width: 15px;
+    height: 15px;
+}
+
+.card-text {
+    margin: 10px 0px 20px 0px;
+    text-align: left;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    text-transform: capitalize;
+    color: var(--dark-text);
+}
+
+.card-text p:first-child {
+    margin: 0px;
+
+}
+
+.card-text div {
+    max-width: 320px;
+    margin-right: 20px;
+}
