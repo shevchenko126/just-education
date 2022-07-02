@@ -1,19 +1,23 @@
 import "./styles.css"
-import ListCards from "../ListCards";
-import CourseCard from "../CourseCard";
+// import {pointCard} from "../ListCards"
+import { useState } from "react";
 
-           
-const Dots = () => {
 
-        
+const Dots = () => { 
+
+    const [selectedDotIndex, setIndex] = useState(0);
+    const moveDots = (index) => {
+        console.log(index);
+        setIndex(index);
+    }
+   
     return(
         <div className="dots">
-            <div className="dot" onClick="pointCard(1)"></div>
-            <div className="dot" onClick="pointCard(2)"></div>
-            <div className="dot" onClick="pointCard(3)"></div>
-            <div className="dot" onClick="pointCard(4)"></div>
-            <div className="dot" onClick="pointCard(5)"></div>
+            {Array.from({length : 5}).map((item, index) => 
+            <div 
+            className={selectedDotIndex === index + 1 ? "dot selected" : "dot"} 
+            onClick={() => moveDots(index + 1)} key = {index + 1}>
+            </div>)}
         </div>
 )}
-
 export default Dots;

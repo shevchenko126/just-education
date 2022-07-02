@@ -13,7 +13,8 @@
     background-color: #ffff;
     opacity: 60%;
     border-radius: 4px;
-    display: inline-block;
+    display: block;
+    caret-color: transparent;
     transition: all 0.25s ease;
   }
 

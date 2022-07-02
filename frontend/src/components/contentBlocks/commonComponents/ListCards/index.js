@@ -1,33 +1,49 @@
+
 import "./styles.css"
+import { useState } from "react";
+import dataCards from "./dataCards";
 import CourseCard from "../CourseCard";
 
-/// *** FOR NEXT USING TO FILL LIST ***
 
-// let cardCount = 0;
-
-// const PushCard = () => {
-//         for(var i=0; i < cardCount; i++){
-            
-//         }
-//     return(
-//         <></>
-//     )
-// }
-
-/// ***
-
-
-const ListCards = (count) => {
+const ListCards = () => {
     
-    var translate = 0;
+    var maxIndex = dataCards.length - 1;
+    var leftIndex = 0;
+    var rightIndex = leftIndex + 2;
+    var step = -400;
+    
+    const [distance, calcDist] = useState(0);
+    const pointCard = (index) => {
+        console.log(index);
+        // if (index === 0 || 
+        //     (index === 1 && leftIndex === 0) ||
+        //     index === maxIndex || 
+        //     (index === maxIndex - 1 && rightIndex === maxIndex)){
+        //     calcDist(0)
+        // }
+        
+    }
     return(
         <div className="cources__slider">
-            <div className="cources__slider-cards" style={{"transform": `translateX(${translate}})`}}>
-                <CourseCard cardId="c1" status="-" raiting="3" lessons="4" hours="2" minutes="12" oldPrice="959" newPrice="415.99"/>
-                <CourseCard cardId="c2" status="0" raiting="4" lessons="5" hours="5" minutes="13" oldPrice="848" newPrice="315.99"/>
-                <CourseCard cardId="c3" status="1" raiting="5" lessons="2" hours="6" minutes="42" oldPrice="636" newPrice="215.99"/>
-                <CourseCard cardId="c4" status="-" raiting="3" lessons="3" hours="7" minutes="15" oldPrice="747" newPrice="315.99"/>
-                <CourseCard cardId="c5" status="0" raiting="4" lessons="3" hours="8" minutes="32" oldPrice="1000" newPrice="499.99"/>
+            <div className="cources__slider-cards" style={{"transform": `translateX(${distance}px)`}}>
+            {dataCards.map((item, index) => 
+            // <div className="courses__card"
+            // onClick = {() => pointCard(index)}
+            // key={index}
+            // >{index + 1}</div> 
+
+            <CourseCard 
+            cardId = {item.cardId} 
+            status = {item.status} 
+            raiting = {item.raiting} 
+            lessons = {item.lessons}
+            hours = {item.hours}
+            minutes = {item.minutes}
+            oldPrice = {item.oldPrice}
+            newPrice = {item.newPrice}
+            onClick = {() => pointCard(index)}
+            key={index}/>
+            )}
             </div>
         </div>
 )}
