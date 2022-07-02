@@ -34,8 +34,10 @@ const ListCards = () => {
 
             <CourseCard 
             cardId = {item.cardId} 
-            status = {item.status} 
-            raiting = {item.raiting} 
+            status = {item.status}
+            starsNo = {item.starsNo} 
+            raiting = {item.raiting}
+            reviews = {item.reviews} 
             lessons = {item.lessons}
             hours = {item.hours}
             minutes = {item.minutes}
