@@ -33,7 +33,7 @@ body {
 
                         .left-menu_dashboard::before {
                             content: '';
-                            background: url(../../../../public/images/icons/dashboard_icon.svg) no-repeat;
+                            background: url(../../../../public/images/icons/dashboard-icon.svg) no-repeat;
                             background-size: contain;
                             position: absolute;
                             width: 20px;
@@ -44,7 +44,7 @@ body {
 
                         .left-menu_my-cources::before {
                             content: '';
-                            background: url(../../../../public/images/icons/my_cources_icon.svg) no-repeat;
+                            background: url(../../../../public/images/icons/my-cources-icon.svg) no-repeat;
                             background-size: contain;
                             position: absolute;
                             width: 20px;
@@ -77,7 +77,7 @@ body {
                         }
                         .left-menu_wishlist::before {
                             content: '';
-                            background: url(../../../../public/images/icons/wishlist.svg) no-repeat;
+                            background: url(../../../../public/images/icons/wishlist-icon.svg) no-repeat;
                             background-size: contain;
                             position: absolute;
                             width: 20px;
@@ -87,7 +87,7 @@ body {
                         }
                         .left-menu_setting::before {
                             content: '';
-                            background: url(../../../../public/images/icons/settings.svg) no-repeat;
+                            background: url(../../../../public/images/icons/settings-icon.svg) no-repeat;
                             background-size: contain;
                             position: absolute;
                             width: 20px;
@@ -97,7 +97,7 @@ body {
                         }
                         .left-menu_logout::before {
                             content: '';
-                            background: url(../../../../public/images/icons/logout.svg) no-repeat;
+                            background: url(../../../../public/images/icons/logout-icon.svg) no-repeat;
                             background-size: contain;
                             position: absolute;
                             width: 20px;
@@ -106,13 +106,52 @@ body {
                             left: 0;
                         }
 
+   
+
+/* Style for active block */
+
+
+
+
+
+
+    .left-menu_my-cources.active::before  {
+        background: url(../../../../public/images/icons/my-cources-icon-active.svg) no-repeat;  
+    }  
+    .left-menu_dashboard.active::before  {
+        background: url(../../../../public/images/icons/dashboard-icon-active.svg) no-repeat;  
+    } 
+    .left-menu_quizzes.active::before  {
+            background: url(../../../../public/images/icons/quizzes-icon-active.svg) no-repeat;  
+        }       
+        .left-menu_order.active::before  {
+            background: url(../../../../public/images/icons/order-icon-active.svg) no-repeat;  
+        } 
+        .left-menu_wishlist.active::before  {
+            background: url(../../../../public/images/icons/wishlist-icon-active.svg) no-repeat;  
+        } 
+        .left-menu_setting.active::before  {
+            background: url(../../../../public/images/icons/settings-icon-active.svg) no-repeat;  
+        }    
+    
+
+    .left-menu_logout.active::before  {
+            background: url(../../../../public/images/icons/logout-icon-active.svg) no-repeat;
+        }  
+
+
+
+
+
+
+
   .left-menu-block div.active::before {
+    background-size: 20px;
+    background-position: 50% 50%;
     width: 50px;
     height: 50px;
     left: -13px;
     top: 2px;
-    background-size: 20px;
-    background-position: 50% 50%;
     background-color: #090761;
     box-shadow: 0px 8px 15px rgba(9, 7, 97, 0.2);
     border-radius: 4px;
@@ -120,4 +159,9 @@ body {
 
   .left-menu-block div.active {
     color: #090761;
+    
   }
+
+  
+
+  
