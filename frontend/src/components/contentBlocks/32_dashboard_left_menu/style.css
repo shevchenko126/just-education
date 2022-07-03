@@ -1,0 +1,123 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+
+body {
+    font-family: 'Jost', sans-serif;
+}
+
+  
+
+  .left-menu {
+    min-width: 300px;
+    padding-top: 60px;
+    border-top: 1px solid #E7E7EC;
+    border-right: 1px solid #E7E7EC;
+  }
+
+  
+  
+        .left-menu-block {
+            margin-left: 40px;
+            
+            font-style: normal;
+            font-size: 16px;
+            line-height: 60px;
+            color: #77838F;
+        }
+
+                .left-menu-block div {
+                    padding-left: 56px;
+                    position: relative;
+                    
+                }
+
+                        .left-menu_dashboard::before {
+                            content: '';
+                            background: url(../../../../public/images/icons/dashboard_icon.svg) no-repeat;
+                            background-size: contain;
+                            position: absolute;
+                            width: 20px;
+                            height: 20px;
+                            top: 20px;
+                            left: 0;
+                        }
+
+                        .left-menu_my-cources::before {
+                            content: '';
+                            background: url(../../../../public/images/icons/my_cources_icon.svg) no-repeat;
+                            background-size: contain;
+                            position: absolute;
+                            width: 20px;
+                            height: 20px;
+                            top: 20px;
+                            left: 0;
+                        }
+
+
+                        .left-menu_quizzes::before {
+                            content: '';
+                            background: url(../../../../public/images/icons/quizzes-icon.svg) no-repeat;
+                            background-size: contain;
+                            position: absolute;
+                            width: 20px;
+                            height: 20px;
+                            top: 20px;
+                            left: 0;
+                        }
+
+                        .left-menu_order::before {
+                            content: '';
+                            background: url(../../../../public/images/icons/order-icon.svg) no-repeat;
+                            background-size: contain;
+                            position: absolute;
+                            width: 20px;
+                            height: 20px;
+                            top: 20px;
+                            left: 0;
+                        }
+                        .left-menu_wishlist::before {
+                            content: '';
+                            background: url(../../../../public/images/icons/wishlist.svg) no-repeat;
+                            background-size: contain;
+                            position: absolute;
+                            width: 20px;
+                            height: 20px;
+                            top: 20px;
+                            left: 0;
+                        }
+                        .left-menu_setting::before {
+                            content: '';
+                            background: url(../../../../public/images/icons/settings.svg) no-repeat;
+                            background-size: contain;
+                            position: absolute;
+                            width: 20px;
+                            height: 20px;
+                            top: 20px;
+                            left: 0;
+                        }
+                        .left-menu_logout::before {
+                            content: '';
+                            background: url(../../../../public/images/icons/logout.svg) no-repeat;
+                            background-size: contain;
+                            position: absolute;
+                            width: 20px;
+                            height: 20px;
+                            top: 20px;
+                            left: 0;
+                        }
+
+  .left-menu-block div.active::before {
+    width: 50px;
+    height: 50px;
+    left: -13px;
+    top: 2px;
+    background-size: 20px;
+    background-position: 50% 50%;
+    background-color: #090761;
+    box-shadow: 0px 8px 15px rgba(9, 7, 97, 0.2);
+    border-radius: 4px;
+  }
+
+  .left-menu-block div.active {
+    color: #090761;
+  }
