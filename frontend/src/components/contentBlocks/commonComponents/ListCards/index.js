@@ -28,8 +28,7 @@ const ListCards = (props) => {
 
         width <= 830 ? setCols(0) : 
         width <= 1230 ? setCols(1) : setCols(2)
-
-        console.log(dotIndex);       
+      
         setSelected(dotIndex);   
 
         if(dotIndex > rightIndex){
@@ -49,7 +48,6 @@ const ListCards = (props) => {
             <div className="cources__slider"  style={
                             width <= 830 ? {width: "400px"} : 
                             width <= 1230 ? {width: "800px"}: {width: "1200px"}}>
-                {/* <div>{console.log({winWidth})}</div> */}
                 <div className="cources__slider-cards" style={{transform: `translateX(${distance}px)`}}>
 
                 {dataCards.map((item, index) => 
