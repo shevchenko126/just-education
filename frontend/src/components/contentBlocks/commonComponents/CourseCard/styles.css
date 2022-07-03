@@ -39,6 +39,7 @@ a {
     height: 420px;
     margin: auto 15px;
     background-color: white;
+    caret-color: transparent;
     border: solid 1px var(--grey-back);
     border-radius: 4px;
     text-decoration: none;

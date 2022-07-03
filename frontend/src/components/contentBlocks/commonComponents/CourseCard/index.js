@@ -11,7 +11,9 @@ const CourseCard = ({
     hours,
     minutes,  
     oldPrice,  
-    newPrice }) => {
+    newPrice,
+    className
+    }) => {
 
         let statusClass = "";
         status === "0" ? statusClass = "label-best_seller" : (
@@ -19,7 +21,7 @@ const CourseCard = ({
         );
 
     return(
-        <div className="courses__card" id={cardId}>
+        <div className={className} id={cardId}>
         <div className="courses__card-background">
             <a href="#" title="Course...">
                 <img src={("/images/card_bg.png")} alt="Course" id="card-bacground"/>

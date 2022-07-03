@@ -5,25 +5,13 @@
     width: 1200px; 
     height: 450px;
     overflow: hidden;
-    transition: all 0.35s ease;
 }
 
 .cources__slider-cards{
     width: 2000px;
     height: 100%;
     display: flex;
-}
-
-@media(max-width: 1230px){
-    .cources__slider{
-        width: 800px;
-    }
-}
-
-@media(max-width: 830px){
-    .cources__slider{
-        width: 400px;
-    }
+    transition: all 0.35s ease;
 }
 
 /* END LISTCARDS */
