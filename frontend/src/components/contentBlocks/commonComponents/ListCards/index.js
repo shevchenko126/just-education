@@ -9,7 +9,7 @@ const ListCards = (props) => {
     var length = dataCards.length;
     var step = -400;
 
-    const width = ScreenSize().width;
+    var width = ScreenSize().width;
 
     const [cols, setCols] = useState(width <= 830 ? 0 : width <= 1230 ? 1 : 2);
    
@@ -28,7 +28,7 @@ const ListCards = (props) => {
 
         width <= 830 ? setCols(0) : 
         width <= 1230 ? setCols(1) : setCols(2)
-      
+
         setSelected(dotIndex);   
 
         if(dotIndex > rightIndex){
@@ -42,12 +42,17 @@ const ListCards = (props) => {
             setDist(dotIndex * step);
         }        
     }
+    
+    const updateWidthValue = () => {
+        if (width <= 830) return 400;
+        if (width <= 1230) return 800;
+        return 1200;
+    }
+    var widthValue = updateWidthValue();
   
     return(        
         <>
-            <div className="cources__slider"  style={
-                            width <= 830 ? {width: "400px"} : 
-                            width <= 1230 ? {width: "800px"}: {width: "1200px"}}>
+            <div className="cources__slider"  style={{width: `${widthValue}px`}}>
                 <div className="cources__slider-cards" style={{transform: `translateX(${distance}px)`}}>
 
                 {dataCards.map((item, index) => 
