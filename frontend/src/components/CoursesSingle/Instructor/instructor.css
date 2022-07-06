@@ -1,0 +1,284 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Jost', sans-serif;
+}
+.col-8 {
+    width: 770px;
+}
+.instructor__name p {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 32px;
+    color: #2F2D51;
+    padding: 43px 10px 0;
+}
+.person__img {
+    position: relative;
+    border: 1px solid #E7E7EC;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+.person__img::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-image: url(/public/images/Surface_instructor.svg);
+    background-repeat: no-repeat;
+}
+.instructor__info {
+    padding-left: 27px;
+}
+.instructor__info h2{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 29px;
+    color: #2F2D51;
+    margin: 0;
+}
+.instructor__info p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #77838F;
+    margin: 0;
+}
+.instructor__achievement-block p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #77838F;
+    margin: 0;
+    margin-left: -31px;
+    padding: 39px 10px 0;
+}
+.achievement__rating p {
+    position: relative;
+}
+.achievement__rating p::before {
+    content: '';
+    position: absolute;
+    top: 45px;
+    left: -13px;
+    background-image: url(/public/images/icons/vector.png);
+    background-repeat: no-repeat;
+    width: 16px; 
+    height: 16px;
+}
+.achievement__reviews p {
+    position: relative;
+    left: -4px;
+}
+.achievement__reviews p::before {
+    content: '';
+    position: absolute;
+    top: 45px;
+    left: -20px;
+    background-image: url(/public/images/icons/reviews.svg);
+    background-repeat: no-repeat;
+    width: 20px; 
+    height: 20px;
+}
+.achievement__students p {
+    position: relative;
+    left: -22px;
+}
+.achievement__students p::before {
+    content: '';
+    position: absolute;
+    top: 43px;
+    left: -22px;
+    background-image: url(/public/images/icons/students.svg);
+    background-repeat: no-repeat;
+    width: 18px; 
+    height: 25px;
+}
+.achievement__courses p {
+    position: relative;
+    left: -39px;
+}
+.achievement__courses p::before {
+    content: '';
+    position: absolute;
+    top: 45px;
+    left: -15px;
+    background-image: url(/public/images/icons/courses.svg);
+    background-repeat: no-repeat;
+    width: 16px; 
+    height: 18px;
+}
+.instructor__text p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #77838F;
+    padding: 32px 10px 0;
+}
+@media (max-width: 992px){
+    .achievement__rating p {
+        left: 10px;
+    }
+}
+@media (max-width: 767px) {
+    .instructor__name p {
+        font-size: 25px;
+    }
+    .instructor__info p,
+    .instructor__achievement-block p,
+    .instructor__text p {
+        line-height: 35px;
+    }
+    .instructor__achievement-block {
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .instructor__achievement {
+        align-items: center;
+        padding: 0;
+        margin: 0 auto;
+    }
+    .instructor__achievement-block p {
+        margin: 0 13px;
+    }
+    .achievement__students p{
+        padding-top: 8px;
+        left: 0;
+    }
+    .achievement__courses p {
+        padding-top: 8px;
+        left: -18px;
+    }
+    .achievement__reviews p::before,
+    .achievement__rating p::before {
+        top: 49px; 
+    }
+    .achievement__students p::before,
+    .achievement__courses p::before {
+        top: 17px;
+    }
+    .text-about p {
+        padding-top: 50px;
+    }
+}
+@media (max-width: 576px) {
+    .person__img {
+        width: 115px;
+        height: 115px;
+    }
+    .person__img::before{
+        width: 100px;
+        height: 100px;
+        background-position: center;
+    }
+}
+@media (max-width: 414px) {
+    .row {
+        position: relative;
+    }
+    .instructor__person .person__img {
+        content: '';
+        position: absolute;
+    }
+    .instructor__info {
+        padding-left: 35%;
+        padding-top: 10%;
+    }
+    .person__img {
+        width: 115px;
+        height: 115px;
+    }
+    .person__img::before{
+        width: 100px;
+        height: 100px;
+        background-position: center;
+    }
+    .text-about p {
+        padding-top: 35px;
+    }
+    .text-passion p {
+        padding-top: 5px;
+    }
+}
+@media (max-width: 399px) {
+    .instructor__achievement-block {
+        width: 100%;
+        display: flex;
+        justify-content: left;
+    }
+    .achievement__reviews p,
+    .achievement__students p {
+        padding-top: 0;
+        left: 13px;
+    }
+    .achievement__rating p::before {
+        left: -17px;
+    }
+    .achievement__reviews p::before,
+    .achievement__students p::before {
+        top: 9px;
+    }
+    .achievement__courses p {
+        left: 13px;
+        padding-top: 0;
+    }
+    .achievement__students p::before,
+    .achievement__courses p::before {
+        left: -20px;
+    }
+    .achievement__courses p::before {
+        top: 8px;
+    }
+    .text-about p {
+        padding-top: 25px;
+    }
+}
+@media (max-width: 370px) {
+    .person__img {
+        width: 110px;
+        height: 110px;
+    }
+    .person__img::before{
+        width: 95px;
+        height: 95px;
+        background-position: center;
+    }
+}
+@media (max-width: 360px) {
+    .instructor__info {
+        padding-top: 36%;
+        padding-left: 0;
+    }
+    .instructor__achievement {
+        padding-top: 18px;
+    }
+    .instructor__achievement-block p{
+        padding-top: 3px;
+    }
+    .achievement__rating p::before {
+        left: -15px;
+    }
+    .achievement__students p::before {
+        top: 10px
+    }
+    .achievement__reviews p::before ,
+    .achievement__rating p::before,
+    .achievement__courses p::before {
+        top: 11px;
+    }
+}
