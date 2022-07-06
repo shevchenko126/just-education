@@ -11,10 +11,10 @@ class Student(models.Model):
         return self.user.username
 
     class Meta:
-        verbose_name = "студент"
-        verbose_name_plural = "студенти"
-
-
+        verbose_name ="Студент"
+        verbose_name_plural ="Студенти"
+  
+ 
 class Teacher(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     rating = models.DecimalField(verbose_name='рейтинг', max_digits=2, decimal_places=1, blank=True, null=True)
@@ -24,5 +24,5 @@ class Teacher(models.Model):
         return self.user.username
 
     class Meta:
-        verbose_name = "вчитель"
-        verbose_name_plural = "вчителя"
+        verbose_name ="Викладач"
+        verbose_name_plural ="Викладачі"    
