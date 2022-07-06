@@ -1,5 +1,6 @@
 import React from 'react';
-import './index.css';
+import './just11home5block.css';
+
 
 
 const index = () => {
@@ -40,4 +41,4 @@ const index = () => {
 </div>
   )
 }
-export default index
+export default index;

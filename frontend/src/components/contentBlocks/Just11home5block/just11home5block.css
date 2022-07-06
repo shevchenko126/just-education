@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Jost', sans-serif;
+}
+.reviews {
+    width: 100%;
+    background-color: #F7F9FB;
+    margin: 0 auto;
+    padding-top: 90px;
+}
+.reviews__title h1 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 50.58px;
+    color: #2F2D51;
+}
+.reviews__title p {
+    text-align: center;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+    color: #77838F;
+    margin: 0;
+}
+.reviews__text {
+    width: 100%;
+    margin-top: 120px;
+}
+.reviews__text p {
+    position: relative;
+    width: 45%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 28.9px;
+    color: #77838F;
+    padding: 0 5px 60px;
+}
+.reviews__text p::before {
+    content: '';
+    position: absolute;
+    top: -28px;
+    left: -65px;
+    width: 44px;
+    height: 28px;
+    background-image: url(/public/images/icons/quotes.svg);
+    background-repeat: no-repeat;
+    fill: #2F2D51;
+}
+.reviews__studends {
+    width: 100%;
+    margin-top: 40px;
+}
+.reviews__studends{
+    gap: 28px;
+    flex-wrap: wrap;
+    padding-bottom: 25px;
+}
+.reviews__studends-block {
+    position: relative;
+    background-color: white;
+    width: 370px;
+    height: 95px;
+    border-radius: 100px;
+    border: 1px solid #E7E7EC;
+    transition: all .3s ease;
+}
+.reviews__studends-block:hover {
+    box-shadow: 0 8px 15px rgba(140, 152, 164, .1); 
+}
+.students-block__img {
+    position: absolute;
+    top: 12.5px;
+    left: 12.5px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.reviews__info_1 {
+    background-image: url(/public/images/surface.svg);
+}
+.reviews__info_2 {
+    background-image: url(/public/images/surface.svg);
+}
+.reviews__info_3 {
+    background-image: url(/public/images/surface.svg);
+}
+.reviews__students-person {
+    padding-left: 104px;
+    line-height: 1;
+}
+.reviews__students-person h2 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: #2F2D51;
+    margin: 0;
+}
+.reviews__students-person p {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 23px;
+    color: #77838F;
+    margin: 0;
+}
+@media (max-width: 1200px) {
+    .reviews__studends {
+        margin-top: 30px;
+    }
+}
+@media (max-width: 992px) {
+    .reviews__studends {
+        margin-top: 25px;
+    }
+}
+@media (max-width: 768px){
+    .reviews__text {
+        margin-top: 90px;
+    }
+    .reviews__title h1 {
+        font-size: 30px;
+    }
+    .reviews__studends {
+        margin-top: 15px;
+    }
+}
