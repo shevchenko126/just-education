@@ -9,7 +9,7 @@ from courses.models import Course
 from account.models import Student
 
 # Create your models here.
-class Registration(models.Model):
+class CourseRegistration(models.Model):
     course = models.ForeignKey(Course, verbose_name="Курс",
                                on_delete=models.SET_NULL,
                                blank=True,
