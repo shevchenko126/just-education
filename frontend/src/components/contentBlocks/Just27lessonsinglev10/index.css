@@ -1,0 +1,153 @@
+:root {
+  --blue: #377dff;
+  --dark-blue: #21325b;
+  --violet: #b253f6;
+  --grey-back: #e7e7ec;
+  --dark-text: #2f2d51;
+  --light-text: #77838f;
+  --light-back: #F7F9FB;
+  --light-orange: #FFC78B;
+  --light-viloet: #B8B2FD;
+  --dark-gray-70: rgba(47, 45, 81, 0.7);
+  --button-color: #4A8F9F;
+}
+
+.main-content__box {
+  font-family: 'Jost';
+  max-width: 1036px;
+  margin-top: 30px;
+}
+
+.main-container {
+  position: relative;
+  max-width: 970px;
+  margin-top: 3px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.main-content__text h2 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 32px;
+  color: var(--dark-text);
+  margin-bottom: 10px;
+}
+
+.main-course video {
+  background-image: url("/public/images/video_image.png");
+  background-size: cover;
+  max-width: 970px;
+  max-height: 500px;
+  padding: 0;
+  border-radius: 4px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.video-button {
+  background-color: rgb(255, 255, 255);
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  background-image: url('/public/images/icons/triangle_play.svg');
+  background-position: 35px center;
+  background-repeat: no-repeat;
+}
+
+.show-less {
+  margin-left: 8px;
+  color: #fff;
+  font-style: normal;
+  font-weight: 500;
+  background-color: var(--button-color);
+  width: 26px;
+  height: 26px;
+  border-radius: 100%;
+}
+
+.show-less__text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 23px;
+  text-transform: capitalize;
+  color: var(--button-color);
+}
+
+.main-desription__text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+  color: var(--light-text);
+}
+
+.descriptoin-buttons {
+  color: #fff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 23px;
+  background-color: var(--button-color);
+  height: 60px;
+  width: 280px;
+  padding: 20px 10px;
+  margin-top: 55px;
+  border-radius: 4px;
+}
+
+.arrow-img {
+  width: 12px;
+  margin: 0 5px 3px;
+}
+
+.descriptoin-buttons span {
+  margin: 0 5px;
+}
+
+.buttons {
+  margin-top: 55px;
+  max-height: 120px;
+  margin-bottom: 10px;
+}
+
+/* SIDEBAR */
+.burger-menu {
+  position: fixed;
+  display: flex;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  margin-left: 0;
+  height: 100px;
+}
+
+.burger-button {
+  position: relative;
+  margin-top: 30px;
+  margin-left: 0px;
+  background-color: #090761;
+  width: 60px;
+  height: 50px;
+  border-radius: 0px 4px 4px 0;
+  background-image: url('/public/images/icons/course_menu.svg');
+  background-position: 18px center;
+  background-repeat: no-repeat;
+}
+
+.burger-content {
+  position: relative;
+  width: 0;
+  height: 500px;
+  background-color: rgb(243, 243, 243);
+
+  transition: 0.5s;
+}
+
+.burger-content.active {
+  width: 390px;
+  border: 1px solid var(--grey-back);
+  box-shadow: 0px 8px 15px rgba(140, 152, 164, 0.1);
+}
