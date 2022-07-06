@@ -1,0 +1,318 @@
+body {
+    font-family: 'Jost', sans-serif;
+}
+.content__course-inset {
+    margin-top: 210px;
+    width: 100%;
+}
+.content__instructors-title {
+    width: 60%;
+    margin: 0 auto auto;
+    display: block;
+}
+/* соц мережі, лого, репорт */
+.instructors-title__logo-block {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo-block__social {
+    display: inline-flex;
+    justify-content: center;
+    width: 30%;
+}
+.content__instructors-social {
+    width: 35px;
+    height: 35px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-left: 10px;
+    display: flex;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    transition: all .3s ease;
+}
+.content__instructors-social a {
+    width: 100%;
+}
+.content__instructors-social:hover {
+    border: 1px solid #E7E7EC;
+    border-radius: 50%;
+}
+.social__facebook-logo {
+    background-image: url(/public/images/icons/facebook_logo.svg);
+}
+.social__twitter-logo {
+    background-image: url(/public/images/icons/twitter_logo.svg);
+}
+.social__instagram-logo {
+    background-image: url(/public/images/icons/instagram_logo.svg);
+}
+.social__linkedin-logo {
+    background-image: url(/public/images/icons/linkedin_logo.svg);
+}
+.logo-block__instructor-images {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+.logo-block__instructor-images-photo {
+    position: relative;
+    width: 210px;
+    max-width: 210px;
+    height: 210px;
+    max-height: 210px;
+    border: 1px solid #E7E7EC;
+    border-radius: 50%;
+}
+.logo-block__instructor-images-photo::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 172px;
+    max-width: 172px;
+    height: 172px;
+    max-height: 172px;
+    background-image: url(/public/images/surface.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border-radius: 50%;
+}
+.logo-block__share {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+.share__report {
+    position: relative;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    color: #4A8F9F;
+    transition: all .2s ease;
+}
+.share__report::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url(/public/images/icons/share_logo.svg);
+    background-repeat: no-repeat;
+}
+.share__report:hover {
+    color: #1e6474;
+}
+/* інструктори імя та спеціальність */
+.instructors-title__info-block {
+    width: 100%;
+    height: 76px;
+    flex-direction: column;
+}
+.info-block__instructor-name{
+    text-align: center;
+    font-weight: 500;
+    font-size: 35px;
+    color: #2F2D51;
+    margin-top: 7px;
+}
+.info-block__instructor-specialty{
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    color: #77838F;
+}
+/* лічильники, рейтинг */
+.instructors-title__icon-block {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 33px;
+}
+.icon-blocks {
+    width: 20%;
+    display: inline-flex;
+}
+.icon-block-img {
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+.reviews__icon {
+    background-image: url(/public/images/icons/reviews_icon.svg);
+}
+.rating__icon {
+    background-image: url(/public/images/icons/rating_icon.svg);
+}
+.top-teacher__icon {
+    background-image: url(/public/images/icons/top-teacher_icon.svg);
+}
+.courses__icon {
+    background-image: url(/public/images/icons/courses_icon.svg);
+}
+.icon-blocks {
+    align-items: center;
+    font-weight: 400;
+    font-size: 16px;
+    color: #77838F;
+    margin-left: 10px;
+}
+.instructor-single {
+    display: flex;
+    justify-content: center;
+    padding: 18px 50px;
+    background-color:#4A8F9F;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    margin: 42px auto 50px;
+}
+@media screen and (max-width: 1200px) {
+    .content__instructors-title {
+        width: 75%;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .content__instructors-title {
+        width: 100%;
+    }
+    .share__report::before {
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+        left: 50px;
+        bottom: -100px;
+        transition: all .2s ease;
+    }
+}
+@media screen and (max-width: 770px) {
+    .logo-block__social {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .content__instructors-social {
+        width: 50px;
+        height: 50px;
+    }
+    .share__report {
+        word-spacing: 9999999px;
+        text-align: center;
+        text-decoration: none;
+    }
+    .share__report::before {
+        left: 65px;
+        height: 120px;
+        bottom: -120px;
+        transition: all .2s ease;
+    }
+    .reviews__counter, .rating__counter, .top-teacher__status, .courses__counter {
+        display: flex;
+        text-align: center;
+        font-size: 14px;
+        margin-left: 5px;
+    }
+    .logo-block__instructor-images-photo::before {
+        width: 120px;
+        max-width: 120px;
+        height: 120px;
+        max-height: 120px;
+        transition: all .2s ease;
+    }
+    .logo-block__instructor-images-photo {
+        width: 150px;
+        max-width: 150px;
+        height: 150px;
+        max-height: 150px;
+        transition: all .2s ease;
+    }
+}
+@media screen and (max-width: 550px) {
+    .info-block__instructor-name {
+        font-size: 22px;
+    }
+    .share__report::before {
+        left: 60px;
+        transition: all .2s ease;
+    }
+    .info-block__instructor-specialty {
+        font-size: 16px
+    }
+    .reviews__counter, .rating__counter, .top-teacher__status, .courses__counter {
+        display: flex;
+        text-align: center;
+        font-size: 10px;
+        margin-left: 5px;
+    }
+    .content__instructors-social {
+        width: 60px;
+        height: 60px;
+    }
+    .logo-block__instructor-images-photo::before {
+        width: 90px;
+        max-width: 90px;
+        height: 90px;
+        max-height: 90px;
+        transition: all .2s ease;
+    }
+    .logo-block__instructor-images-photo {
+        width: 110px;
+        max-width: 110px;
+        height: 110px;
+        max-height: 110px;
+        transition: all .2s ease;
+    }
+}
+@media screen and (max-width: 400px) {
+    .logo-block__social {
+        align-items: flex-start;
+    }
+    .content__instructors-social {
+        width: 70px;
+        height: 70px;
+    }
+    .share__report {
+        text-align: right;
+    }
+    .share__report::before {
+        left: 70px;
+        transition: all .2s ease;
+    }
+    .reviews__counter, .rating__counter, .top-teacher__status, .courses__counter {
+        display: flex;
+        text-align: center;
+        font-size: 12px;
+    }
+    .icon-block-img {
+        width: 25px;
+        height: 18px;
+        margin-left: auto;
+        background-size: cover;
+    }
+}
+@media screen and (max-width: 380px) {
+    .logo-block__instructor-images-photo::before {
+        width: 75px;
+        max-width: 75px;
+        height: 75px;
+        max-height: 75px;
+        transition: all .2s ease;
+    }
+    .logo-block__instructor-images-photo {
+        width: 85px;
+        max-width: 85px;
+        height: 85px;
+        max-height: 85px;
+        transition: all .2s ease;
+    }
+}

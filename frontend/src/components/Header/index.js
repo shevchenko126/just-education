@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import './header.css';
-import logo from './images/logo.png';
-import search from './images/search.svg';
-import user from './images/user.svg';
-import shop from './images/shop.svg';
+
 
 const Header = () => {
 
@@ -17,7 +14,7 @@ const Header = () => {
       <div onClick={navSwitch} className={`header__cover ${isActive ? 'activeBurger' : ''}`}>
         <div className="container header__container d-flex justify-content-between align-items-center">
           <div className="logo">
-            <img src={logo} alt="logo" />
+            <img src="/images/logo.png" alt="logo" />
           </div>
           <div className="header__right d-flex align-items-center">
             <div className="menu">
@@ -50,18 +47,18 @@ const Header = () => {
             <div className="header__buttons d-flex align-items-center">
               <div className="header__buttons-button">
                 <a href="">
-                  <img src={search} alt="search" />
+                  <img src="/images/icons/search.svg" alt="search" />
                 </a>
               </div>
               <div className="header__buttons-button">
                 <a href="">
-                  <img src={user} alt="user" />
+                  <img src="/images/icons/user.svg" alt="user" />
                 </a>
               </div>
               <div className="header__buttons-button position-relative">
                 <div className="header__bouttons-count">2</div>
                 <a href="">
-                  <img src={shop} alt="shop" />
+                  <img src="/images/icons/shop.svg" alt="shop" />
                 </a>
               </div>
             </div>
