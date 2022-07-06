@@ -1,0 +1,242 @@
+:root {
+  --blue: #377dff;
+  --dark-blue: #21325b;
+  --violet: #b253f6;
+  --grey-back: #e7e7ec;
+  --dark-text: #2f2d51;
+  --light-text: #77838f;
+}
+
+.block_overview {
+  font-family: 'Jost', sans-serif;
+  max-width: 770px;
+  padding: 0;
+  outline-offset: 0px;
+  padding-bottom: 10px;
+}
+
+/* Block nav */
+
+.block_overview-nav {
+  max-width: 550px;
+  margin: 0 0 0 7px;
+  padding-left: 7px;
+}
+
+.nav-link {
+  display: block;
+  padding: 0;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+  color: var(--light-text);
+}
+
+
+.block-nav {
+  padding-top: 12px;
+  padding-right: 0;
+  justify-content: space-between;
+}
+
+
+.nav-link__item {
+  height: 42px;
+}
+
+a.nav-link.active {
+  border-bottom: 3px solid var(--dark-text);
+}
+
+.nav-link__item:hover,
+.nav-link__item:focus {
+  color: var(--dark-text);
+  border-bottom: 3px solid var(--dark-text);
+}
+
+/* .nav-link__underline:hover,
+.nav-link__underline:focus {
+  border-bottom: 3px solid var(--dark-text);
+} */
+
+.block_overview__line {
+  max-width: 770px;
+  height: 1px;
+  background: var(--grey-back);
+  margin-bottom: 50px;
+}
+
+/*Block accordion */
+
+.accordion-wrapper {
+  margin-top: 30px;
+  border: 1px solid var(--grey-back);
+  box-shadow: 0px 8px 15px rgba(140, 152, 164, 0.1);
+  border-radius: 4px;
+}
+
+.accordion-button__custom {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  padding: 27px 30px;
+  color: var(--dark-text);
+}
+
+.accordion-header {
+  position: relative;
+}
+
+.accordion-row {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.accordion-left-block {
+  display: flex;
+
+}
+
+.accordion-right-block {
+  display: flex;
+  text-align: center;
+
+}
+
+.accordion-body {
+  padding: 19px 20px;
+  border-bottom: 1px solid var(--grey-back);
+}
+
+.accordion-body:last-child {
+  border-bottom: none;
+}
+
+.accordion-body:first-child {
+  border-top: 1px solid var(--grey-back);
+}
+
+.accordion-body:nth-child(2n) {
+  background-color: #F7F9FB;
+  ;
+}
+
+.accordion-img-left {
+  margin-left: 12px;
+}
+
+.accordion-text {
+  margin-left: 14px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+  color: var(--light-text);
+}
+
+.accordion-lectures {
+  width: 90px;
+  height: 30px;
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 30px;
+  color: var(--light-text);
+}
+
+.accordion-question {
+  width: 90px;
+  height: 30px;
+  background: rgba(255, 199, 139, 0.4);
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 30px;
+  color: var(--dark-text);
+}
+
+.accordion-time {
+  width: 70px;
+  height: 30px;
+  margin-right: 25px;
+  margin-left: 20px;
+  background: rgba(25, 110, 205, 0.1);
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 30px;
+  color: rgba(25, 110, 205, 1);
+}
+
+.accordion-img-right {
+  margin-right: 10px;
+}
+
+.accordion-button__custom:focus {
+  z-index: 3;
+  border-color: var(--bs-accordion-btn-focus-border-color);
+  outline: 0;
+  box-shadow: none;
+}
+
+.accordion-button__custom:not(.collapsed) {
+  color: var(--dark-text);
+  background-color: transparent;
+  box-shadow: inset 0 calc(var(--bs-accordion-border-width) * -1) 0 var(--bs-accordion-border-color);
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: none;
+}
+
+.accordion-button::after {
+  background-image: none;
+}
+
+.accordion-button::before {
+  content: url("./img/plus.svg");
+  width: 30px;
+  height: 22px;
+
+}
+
+.accordion-button:not(.collapsed)::before {
+  content: url("./img/minus.svg");
+
+}
+
+@media screen and (max-width: 560px) {
+  .accordion-row {
+    flex-direction: column;
+  }
+
+  .accordion-right-block {
+    margin-left: 30px;
+    justify-content: flex-end;
+  }
+
+  .block-nav {
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .accordion-right-block {
+    margin-left: 15px;
+  }
+
+  .accordion-time {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
