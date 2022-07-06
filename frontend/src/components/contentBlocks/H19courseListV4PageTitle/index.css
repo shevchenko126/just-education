@@ -1,0 +1,13 @@
+.container-fluid {
+    position: relative;
+    top: 111px;
+    background: color #FFFFFF;
+}
+.course_courses {
+    position: relative;
+    padding-right: 5%;
+} 
+.course_people {
+    position: relative;
+    padding:4% 8% 4% 0%;
+}      

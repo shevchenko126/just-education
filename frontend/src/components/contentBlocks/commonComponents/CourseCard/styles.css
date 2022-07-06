@@ -29,8 +29,8 @@ h3, p, h5{
     color: var(--light-text);
 }
 
-.bold{
-    font-weight: 500;
+a {
+    text-decoration: none;
 }
 
 .courses__card{
@@ -39,6 +39,7 @@ h3, p, h5{
     height: 420px;
     margin: auto 15px;
     background-color: white;
+    caret-color: transparent;
     border: solid 1px var(--grey-back);
     border-radius: 4px;
     text-decoration: none;
@@ -155,8 +156,10 @@ h3, p, h5{
 }
 
 .courses__card-sabject{
-    font-size: var(--font-size-small);  
+    display: block;
     margin: 16px 0 8px;
+    font-size: var(--font-size-small);  
+    color: var(--light-text);
 }
 
 .courses__card-title{
