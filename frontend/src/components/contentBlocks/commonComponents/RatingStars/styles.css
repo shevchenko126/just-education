@@ -1,0 +1,16 @@
+.rating-star{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.star{
+    background-image: url('/public/images/icons/star.svg');
+}
+
+.star-checked{
+    background-image: url('/public/images/icons/star_checked.svg');
+}
