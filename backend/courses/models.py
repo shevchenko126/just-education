@@ -24,18 +24,18 @@ class Course(models.Model):
 
     class Meta:
 
-        verbose_name = "Курс"
-        verbose_name_plural = "Курси"
+        verbose_name = "курс"
+        verbose_name_plural = "курси"
 
 
 class CourseChapter(models.Model):
-    chapter_title = models.CharField(verbose_name="Назва Розділу",
+    chapter_title = models.CharField(verbose_name="назва розділу",
                                      max_length=100,)
-    duration = models.DurationField(verbose_name="Тривалість",
+    duration = models.DurationField(verbose_name="тривалість",
                                     default=timedelta(days=1),
                                     help_text=('(дні год:хв:сек)'),
                                     blank=True,)
-    course = models.ForeignKey(Course, verbose_name="Курс",
+    course = models.ForeignKey(Course, verbose_name="курс",
                                related_name="course_chapters",
                                on_delete=models.CASCADE,
                                blank=True,
@@ -45,20 +45,20 @@ class CourseChapter(models.Model):
         return self.chapter_title
 
     class Meta:
-        verbose_name = "Розділ курсу"
-        verbose_name_plural = "Розділи курсів"
+        verbose_name = "розділ курсу"
+        verbose_name_plural = "розділи курсів"
 
 
 class CourseLecture(models.Model):
-    lecture_title = models.CharField(verbose_name="Назва Лекції",
+    lecture_title = models.CharField(verbose_name="назва лекції",
                                      max_length=100,)
-    duration = models.DurationField(verbose_name="Тривалість",
+    duration = models.DurationField(verbose_name="тривалість",
                                     default=timedelta(minutes=25),
                                     help_text=('(дні год:хв:сек)'),
                                     blank=True,
                                     null=True)
     course_chapter = models.ForeignKey(CourseChapter,
-                                       verbose_name="Розділ курсу",
+                                       verbose_name="розділ курсу",
                                        related_name="course_lectures",
                                        on_delete=models.CASCADE,
                                        blank=True,
@@ -68,6 +68,5 @@ class CourseLecture(models.Model):
         return self.lecture_title
 
     class Meta:
-        verbose_name = "Лекція курсу"
-        verbose_name_plural = "Лекції курсів"
-
+        verbose_name = "лекція курсу"
+        verbose_name_plural = "лекції курсів"
