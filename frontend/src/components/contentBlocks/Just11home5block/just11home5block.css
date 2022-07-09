@@ -89,13 +89,13 @@ body {
     border-radius: 50%;
 }
 .reviews__info_1 {
-    background-image: url(/public/images/surface.svg);
+    background-image: url(/public/images/surface.png);
 }
 .reviews__info_2 {
-    background-image: url(/public/images/surface.svg);
+    background-image: url(/public/images/surface.png);
 }
 .reviews__info_3 {
-    background-image: url(/public/images/surface.svg);
+    background-image: url(/public/images/surface.png);
 }
 .reviews__students-person {
     padding-left: 104px;
