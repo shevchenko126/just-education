@@ -1,6 +1,6 @@
 import './styles.css';
 import RaitingStars from '../RatingStars'
-import { attributesToProps } from 'html-react-parser';
+// import { attributesToProps } from 'html-react-parser';
 
 const CourseCard = (
     props
@@ -20,7 +20,7 @@ const CourseCard = (
             className: props.className
         };
 
-        // console.log(card);
+        console.log(card.reviews);
 
         let statusClass = "";
         card.status === "0" ? statusClass = "label-best_seller" : (
@@ -31,10 +31,10 @@ const CourseCard = (
         <div className={card.className} id={card.cardId}>
         <div className="courses__card-background">
             <a href="#" title="Course...">
-                <img src={("/images/card_bg.png")} alt="Course" id="card-bacground"/>
+                <img src={("/images/surface.png")} alt="Course" id="card-bacground"/>
             </a>
             <a href="#" title="Instructor...">
-                <img src={("/images/instructor_bg.png")} alt="Instructor" className="courses__card-instructor" id="card-instructor"/>
+                <img src={("/images/surface.png")} alt="Instructor" className="courses__card-instructor" id="card-instructor"/>
             </a>
             <div className="views-likes">
                 <div className="view"></div>
@@ -51,9 +51,9 @@ const CourseCard = (
                         <RaitingStars raiting={card.starsNo}/>
                     </div> 
                     <div className="attributes__raiting-item">{card.raiting}</div>
-                    <div className="attributes__raiting-item reviews">{card.reviews}</div>
+                    <div className="attributes__raiting-item item-reviews">{card.reviews}</div>
                 </div>
-                <div>
+                <div className="attributes__durations-prices">
                     <div className="attributes__durations">
                         <div className="attributes__duration readers" id="lessons">{card.lessons}</div>
                         <div className="attributes__duration hours" id="hours">{card.hours}</div>

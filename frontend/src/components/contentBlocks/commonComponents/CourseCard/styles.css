@@ -190,12 +190,16 @@ a {
     font-size: var(--font-size-small-smaller);
 }
 
-.reviews:before{
+.item-reviews:before{
     content: '(';
 }
 
-.reviews:after{
+.item-reviews:after{
     content: 'k+ Refiews)';
+}
+
+.attributes__durations-prices{
+    /* display: block; */
 }
 
 .attributes__durations{
