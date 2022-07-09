@@ -1,17 +1,12 @@
 import React from "react";
 import "./index.css";
+import FavouriteButton from "./Favourite";
 
 export default function CoursesSingleTop() {
   return (
-    <div class="container">
-      <section class="course-title">
-        <a href="#">
-          <img
-            className="save"
-            src="/images/save.svg"
-            title="Save this course"
-          />
-        </a>
+    <div className="container">
+      <section className="course-title">
+        <FavouriteButton />
         <div className="header">
           <h1>Learn Figma: User Interface Design Essentials - UI/UX Design</h1>
         </div>
@@ -27,6 +22,7 @@ export default function CoursesSingleTop() {
               className="instructor mt-4 me-3"
               src="/images/instructor_images.svg"
               title="Instructor"
+              alt="Instructor"
             />
             <div className="d-block d-md-none mt-4 me-5 pt-2">
               <h6 className="m-0">Created by</h6>

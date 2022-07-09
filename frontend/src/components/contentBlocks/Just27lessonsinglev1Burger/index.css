@@ -1,0 +1,231 @@
+:root {
+  --blue: #377dff;
+  --dark-blue: #21325b;
+  --violet: #b253f6;
+  --grey-back: #e7e7ec;
+  --dark-text: #2f2d51;
+  --light-text: #77838f;
+  --light-back: #F7F9FB;
+  --light-orange: #FFC78B;
+  --light-viloet: #B8B2FD;
+  --dark-gray-70: rgba(47, 45, 81, 0.7);
+  --button-color: #4A8F9F;
+  --dark-violet: #090761;
+}
+
+/* SIDEBAR */
+.burger-menu {
+  font-family: 'Jost', sans-serif;
+  position: fixed;
+  z-index: 5;
+  top: 110px;
+  left: 0;
+  margin-left: 0;
+  border: 1px solid var(--grey-back);
+  transform: translateX(-396px);
+  transition: 1s;
+  padding-bottom: 30px;
+}
+
+.burger-search__input {
+  height: 50px;
+  background-image: url('/public/images/icons/search.svg');
+  background-position: 22px center;
+  background-repeat: no-repeat;
+  margin: 30px 30px 0;
+  border: 1px solid var(--grey-back);
+  border-radius: 4px;
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+input[type="text" i] {
+  border-style: none;
+  margin: 12px auto auto 58px;
+}
+
+.inputSearch {
+  outline: none;
+}
+
+.burger-content {
+  background-color: #fff;
+  position: relative;
+}
+
+.burger-menu.active {
+  transform: translateX(0px);
+  box-shadow: 0px 8px 15px rgba(140, 152, 164, 0.1);
+}
+
+.burger-button {
+  position: absolute;
+  top: 1px;
+  left: 394px;
+  background-color: var(--dark-violet);
+  width: 60px;
+  height: 50px;
+  border-radius: 0px 4px 4px 0;
+  background-image: url('/public/images/icons/course_menu.svg');
+  background-position: 18px center;
+  background-repeat: no-repeat;
+  transition: 0.3s;
+}
+
+/*Block accordion */
+
+.block-accordion {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.block-accordion::-webkit-scrollbar {
+  /* 1 - скроллбар */
+  width: 4px;
+  height: 4px;
+
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.block-accordion::-webkit-scrollbar-button {
+  /* 2 - кнопка */
+
+}
+
+.block-accordion::-webkit-scrollbar-track {
+  /* 3 - трек */
+
+}
+
+.block-accordion::-webkit-scrollbar-track-piece {
+  /* 4 - видимая часть трека */
+}
+
+.block-accordion::-webkit-scrollbar-thumb {
+  /* 5 - ползунок */
+
+  border-radius: 2px;
+  background-color: var(--grey-back);
+}
+
+.block-accordion::-webkit-scrollbar-corner {
+  /* 6 - уголок */
+}
+
+.block-accordion::-webkit-resizer {
+
+  /* 7 - изменение размеров */
+}
+
+.accordion-wrapper {
+  width: 390px;
+}
+
+.accordion-button__custom {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  padding: 27px 30px;
+  color: var(--dark-text);
+}
+
+.accordion-header {
+  position: relative;
+}
+
+.accordion-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion-left__block {
+  display: flex;
+}
+
+.accordion-right__block {
+  display: flex;
+  text-align: center;
+}
+
+.accordion-body {
+  padding: 19px 20px;
+  border-bottom: 1px solid var(--grey-back);
+}
+
+.accordion-body:last-child {
+  border-bottom: none;
+}
+
+.accordion-body:first-child {
+  border-top: 1px solid var(--grey-back);
+}
+
+.accordion-body:nth-child(2n) {
+  background-color: #F7F9FB;
+}
+
+.accordion-img__left {
+  margin-left: 10px;
+}
+
+.accordion-text {
+  margin-left: 14px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 30px;
+  color: var(--light-text);
+}
+
+.accordion-time {
+  width: 70px;
+  height: 30px;
+  margin-right: 25px;
+  margin-left: 10px;
+  background: rgba(25, 110, 205, 0.1);
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 30px;
+  color: rgba(25, 110, 205, 1);
+}
+
+.accordion-img__right {
+  margin-right: 4px;
+}
+
+.accordion-button__custom:focus {
+  border-color: var(--bs-accordion-btn-focus-border-color);
+  outline: 0;
+  box-shadow: none;
+}
+
+.accordion-button__custom:not(.collapsed) {
+  color: var(--dark-text);
+  background-color: transparent;
+  box-shadow: inset 0 calc(var(--bs-accordion-border-width) * -1) 0 var(--bs-accordion-border-color);
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: none;
+}
+
+.accordion-button::after {
+  background-image: none;
+}
+
+.accordion-button::before {
+  content: url("/public/images/icons/plus.svg");
+  width: 30px;
+  height: 22px;
+}
+
+.accordion-button:not(.collapsed)::before {
+  content: url("/public/images/icons/minus.svg");
+}
