@@ -16,7 +16,7 @@ function App() {
       <FeaturedCourses/>
       <InstructorsSingle />
       <Tabs />
-      <Instructor /> {/* ERROR property `class`. Did you mean `className`? */}
+      <Instructor />
       <Just11home5block />
     </>
   );
