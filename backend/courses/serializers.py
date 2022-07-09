@@ -11,8 +11,7 @@ class BaseCourseSerializer(serializers.ModelSerializer):
 
 
 class SingleCourseSerializer(BaseCourseSerializer):
-
     class Meta:
         model = Course
-        field = BaseCourseSerializer.Meta.fields + ['description']
+        fields = BaseCourseSerializer.Meta.fields + ['description', 'featured']
         depth = 1
