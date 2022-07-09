@@ -1,27 +1,34 @@
 import './styles.css';
 import RaitingStars from '../RatingStars'
+import { attributesToProps } from 'html-react-parser';
 
-const CourseCard = ({
-    cardId,
-    status,
-    lessons,
-    starsNo,
-    raiting,
-    reviews,
-    hours,
-    minutes,  
-    oldPrice,  
-    newPrice,
-    className
-    }) => {
+const CourseCard = (
+    props
+
+    ) => {
+        const card = {
+            item:  props.card.cardId, 
+            status:  props.card.status,
+            starsNo:  props.card.starsNo,
+            raiting:  props.card.raiting,
+            reviews:  props.card.reviews ,
+            lessons:  props.card.lessons,
+            hours:  props.card.hours,
+            minutes:  props.card.minutes,
+            oldPrice:  props.card.oldPrice,
+            newPrice:  props.card.newPrice,
+            className: props.className
+        };
+
+        // console.log(card);
 
         let statusClass = "";
-        status === "0" ? statusClass = "label-best_seller" : (
-        status === "1" ? statusClass = "label-featured" : statusClass = "label-none"
+        card.status === "0" ? statusClass = "label-best_seller" : (
+        card.status === "1" ? statusClass = "label-featured" : statusClass = "label-none"
         );
 
     return(
-        <div className={className} id={cardId}>
+        <div className={card.className} id={card.cardId}>
         <div className="courses__card-background">
             <a href="#" title="Course...">
                 <img src={("/images/card_bg.png")} alt="Course" id="card-bacground"/>
@@ -41,20 +48,20 @@ const CourseCard = ({
             <div className="courses__card-attributes">
                 <div className="attributes__raiting">
                     <div className="attributes__raiting-item">
-                        <RaitingStars raiting={starsNo}/>
+                        <RaitingStars raiting={card.starsNo}/>
                     </div> 
-                    <div className="attributes__raiting-item">{raiting}</div>
-                    <div className="attributes__raiting-item reviews">{reviews}</div>
+                    <div className="attributes__raiting-item">{card.raiting}</div>
+                    <div className="attributes__raiting-item reviews">{card.reviews}</div>
                 </div>
                 <div>
                     <div className="attributes__durations">
-                        <div className="attributes__duration readers" id="lessons">{lessons}</div>
-                        <div className="attributes__duration hours" id="hours">{hours}</div>
-                        <div className="attributes__duration minutes" id="minutes">{minutes}</div>
+                        <div className="attributes__duration readers" id="lessons">{card.lessons}</div>
+                        <div className="attributes__duration hours" id="hours">{card.hours}</div>
+                        <div className="attributes__duration minutes" id="minutes">{card.minutes}</div>
                     </div>
                     <div className="attributes__prices">
-                        <div className="old-price">{oldPrice}</div>
-                        <div className="new-price">{newPrice}</div>
+                        <div className="old-price">{card.oldPrice}</div>
+                        <div className="new-price">{card.newPrice}</div>
                     </div>
                 </div>
             </div>

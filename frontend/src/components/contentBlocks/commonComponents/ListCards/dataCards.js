@@ -58,6 +58,19 @@ const dataCards =  [
         minutes: "32", 
         oldPrice: "1000", 
         newPrice: "499.99"
+    
+    },
+    {
+        cardId: "c6", 
+        status: "1", 
+        starsNo: "4",
+        raiting: "4.8",
+        reviews: "3.3",  
+        lessons: "6", 
+        hours: "4.5", 
+        minutes: "73", 
+        oldPrice: "830", 
+        newPrice: "320.99"
     }
 ]
 export default dataCards;
