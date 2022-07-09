@@ -53,20 +53,11 @@ const ListCards = (props) => {
     return(        
         <>
             <div className="cources__slider"  style={{width: `${widthValue}px`}}>
-                <div className="cources__slider-cards" style={{transform: `translateX(${distance}px)`}}>
+                <div className="cources__slider-cards" style={{transform: `translateX(${distance}px)`, width: `${length * -step}px`}}>
 
                 {dataCards.map((item, index) => 
                 <CourseCard 
-                cardId = {item.cardId} 
-                status = {item.status}
-                starsNo = {item.starsNo} 
-                raiting = {item.raiting}
-                reviews = {item.reviews} 
-                lessons = {item.lessons}
-                hours = {item.hours}
-                minutes = {item.minutes}
-                oldPrice = {item.oldPrice}
-                newPrice = {item.newPrice}
+                card = {item}
                 onClick = {() => pointCard(index)}
                 key={index}
                 className={
