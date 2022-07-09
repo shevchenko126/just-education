@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Introduction",
+    "items": [
+      {
+        "description": "Introduction to the course",
+        "question": 3,
+        "time": 30,
+        "lefticon": "list",
+        "state": "play"
+      },
+      { "description": "Introduction", "lefticon": "watch", "state": "unlock" },
+      {
+        "description": "Structure of the course",
+        "time": 30,
+        "lefticon": "list",
+        "state": "play"
+      },
+      {
+        "description": "Required Tools",
+        "lectures": 12,
+        "time": 45,
+        "lefticon": "watch",
+        "state": "unlock"
+      },
+      {
+        "description": "Get Your Free E-book",
+        "question": 3,
+        "time": 30,
+        "lefticon": "list",
+        "state": "play"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Design System",
+    "items": [
+      {
+        "description": "Intro to Design Basics",
+        "time": 30,
+        "lefticon": "list",
+        "state": "play"
+      },
+      {
+        "description": "Layout",
+        "lectures": 9,
+        "question": 5,
+        "time": 45,
+        "lefticon": "watch",
+        "state": "unlock"
+      },
+      {
+        "description": "Visual hierarchy",
+        "time": 30,
+        "lefticon": "list",
+        "state": "play"
+      },
+      {
+        "description": "Visual noise",
+        "lectures": 12,
+        "question": 5,
+        "time": 45,
+        "lefticon": "watch",
+        "state": "unlock"
+      },
+      { "description": "Iconography", "lefticon": "list", "state": "play" },
+      { "description": "Typography", "lefticon": "watch", "state": "unlock" }
+    ]
+  },
+  { "id": 3, "name": "Figma Academy", "items": [] },
+  { "id": 4, "name": "UI Elements", "items": [] }
+]
