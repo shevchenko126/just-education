@@ -36,8 +36,9 @@
 .register__already {
     font-size: 0.9rem;
     text-align: center;
-    position:absolute;
-    left: 50%;
+    /* position:absolute; */
+    /* left: 50%; */
+    color: var(--light-text)
 }
 
 .log_in_text {
@@ -47,10 +48,10 @@
 [type="text"], [type="password"], [type="email"], [type="submit"] {
     width: 390px;
     height: 60px;
-    border-radius: ;
     border-width: 1px;
     border-color: var(--dark-violet);
     border-radius: 4px;
+    color: var(--light-text)
 }
 
 
