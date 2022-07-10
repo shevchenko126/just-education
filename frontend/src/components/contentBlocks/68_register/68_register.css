@@ -1,0 +1,76 @@
+:root {
+--blue: #377dff; (синий, как лого и кнопка)
+--dark-blue: #21325b; (тёмно-синий, как бэк некоторых блоков)
+--violet: #b253f6; (сиреневый)
+--grey-back: #e7e7ec; (светлосерый, как бэк некоторых блоков)
+--light-back: #F7F9FB; (основной бэк)
+--dark-text: #2f2d51; (цвет текста)
+--light-text: #77838f; (цвет светлого текста)
+--light-orange: #FFC78B;
+--light-viloet: #B8B2FD;
+--dark-gray-70:rgba(47, 45, 81, 0.7);
+--button-color: #4A8F9F;
+--dark-violet: #090761;
+}
+
+.register_block {
+    font-size: 16px;
+}
+
+.register_block h1 {
+    font-size: 2.5rem;
+    line-height: 58px;
+    margin-bottom: 0px;
+}
+
+.register_block p {
+    font-size: 0.9rem;
+    line-height: 30px;
+}
+
+.register_block h2 {
+    font-size: 1.4rem;
+    padding-bottom: 42px;
+}
+
+.register__already {
+    font-size: 0.9rem;
+    text-align: center;
+    position:absolute;
+    left: 50%;
+}
+
+.log_in_text {
+    text-decoration: underline;
+}
+
+[type="text"], [type="password"], [type="email"], [type="submit"] {
+    width: 390px;
+    height: 60px;
+    border-radius: ;
+    border-width: 1px;
+    border-color: var(--dark-violet);
+    border-radius: 4px;
+}
+
+
+label {
+    line-height: 30px;
+    font-weight: 400;
+}
+ 
+
+.form_section {
+    padding-top: 130px;
+}
+
+.headers_section {
+    text-align: center;
+}
+
+.register__submit {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: white;
+    background-color: var(--dark-violet);
+}
