@@ -19,9 +19,8 @@
 .register_block {
     font-size: 16px;
     font-family: 'Jost', sans-serif;
-    width: 412px;
+    max-width: 412px;
     height: 770px;
-    border: 1px solid black;
     margin: 0px auto;
     padding: 0px 11px 0px;
 }
