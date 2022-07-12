@@ -7,15 +7,15 @@ const login = () => {
     const forgot_pass_url = "#"
 
     return (
-        <div className="login_block container">
+        <div className="login_block">
+            <div className='container login'>
             <div className="row justify-content-center">
-                <div className='col-6'>
                     <div className='headers_section'>
                         <h1>Login</h1>
                         <p>Home   /   Login</p>
                     </div>
 
-                    <div className='form_section'>
+                    {/* <div className='form_section'> */}
                         <h2>Log In to Your Skola Account!</h2>
                         <form action={action_url} method = "post" encType="multipart/form-data">
                             <div className="form-group">
@@ -39,11 +39,12 @@ const login = () => {
                                         </a>
 
                                     </div>
+                                    
                                     <input className="form-control login__submit" type="submit" value="LOGIN"></input>
                                     <div className='login__signup'>Don't have an account? <span className="signup_text">Sign up</span></div>
                                 </div>
                             </form>
-                    </div>
+                    {/* </div> */}
                 </div>
             </div>
         </div>

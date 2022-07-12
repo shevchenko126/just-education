@@ -8,7 +8,6 @@ const register = () => {
     return (
         <div className="register_block container">
             <div className="row justify-content-center">
-                <div className='col-6'>
                     <div className='headers_section'>
                         <h1>Register</h1>
                         <p>Home   /   Register </p>
@@ -29,7 +28,6 @@ const register = () => {
                                 </div>
                             </form>
                     </div>
-                </div>
             </div>
         </div>
     )
