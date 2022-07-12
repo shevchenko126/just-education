@@ -2,10 +2,7 @@ import './styles.css';
 import RaitingStars from '../RatingStars'
 // import { attributesToProps } from 'html-react-parser';
 
-const CourseCard = (
-    props
-
-    ) => {
+const CourseCard = (props) => {
         const card = {
             item:  props.card.cardId, 
             status:  props.card.status,
