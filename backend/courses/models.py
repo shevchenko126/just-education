@@ -18,12 +18,12 @@ class Course(models.Model):
                                blank=True,
                                null=True)
     rating = RatingField(verbose_name='рейтинг', blank=True, null=True)
+    featured = models.BooleanField(verbose_name='рекомендований', default=False)
 
     def __str__(self):
         return self.title
 
     class Meta:
-
         verbose_name = "курс"
         verbose_name_plural = "курси"
 
