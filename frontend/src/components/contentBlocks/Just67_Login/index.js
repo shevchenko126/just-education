@@ -6,10 +6,11 @@ const Just67_login = () => {
   return (
     <div className="container login__wrapper">
       <h1 className="login__title">Login</h1>
-      <div className="login__breadcrums">
-        <span id="breadcrumsHome">Home</span>
-        <span> / </span>
-        <span id="breadcrumsLogin">Login</span>
+      <div className="login__breadcrumbs">
+        <a href="#" id="breadcrumbsHome">
+          Home
+        </a>
+        /<span id="breadcrumbsLogin">Login</span>
       </div>
       <h2 className="login__intro">Log In to Your Skola Account!</h2>
       <form action="get" className="form login__form">

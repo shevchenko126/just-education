@@ -34,12 +34,19 @@ h2 {
   width: 390px;
 }
 
-.login__breadcrums {
+.login__breadcrumbs {
   color: var(--light-text);
   font-weight: 400;
   font-size: 14px;
   line-height: 30px;
   text-align: center;
+}
+
+#breadcrumbsHome {
+  color: var(--light-text);
+  font-weight: 400;
+  font-size: 14px;
+  text-decoration: none;
 }
 
 .login__form {
