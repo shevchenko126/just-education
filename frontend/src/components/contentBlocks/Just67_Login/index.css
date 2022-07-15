@@ -1,0 +1,161 @@
+:root {
+  --dark-text: #2f2d51;
+  --light-text: #77838f;
+  --wight-text: #ffffff;
+  --color-border-elements: rgba(231, 231, 236, 1);
+  --color-background-elements: rgba(255, 255, 255, 1);
+  --light-back: #f7f9fb;
+  --grey-back: #e7e7ec;
+  --wight-back: #ffffff;
+  --button-blue: #196ecd;
+  --button-dark-blue: #090761;
+}
+
+body {
+  font-family: "Jost", sans-serif;
+}
+
+h1 {
+  color: var(--dark-text);
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+}
+
+h2 {
+  color: var(--dark-text);
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 130px;
+}
+
+.login__wrapper {
+  margin: 97px auto;
+  width: 390px;
+}
+
+.login__breadcrumbs {
+  color: var(--light-text);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+}
+
+#breadcrumbsHome {
+  color: var(--light-text);
+  font-weight: 400;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.login__form {
+  padding: 0;
+  margin-top: 30px;
+}
+
+label {
+  color: var(--dark-text);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+input {
+  border: 1px solid var(--grey-back);
+  border-radius: 4px;
+
+  padding: 15px 22px;
+  margin-top: 7px;
+  margin-bottom: 20px;
+  height: 60px;
+  width: 390px;
+}
+
+button {
+  background-color: var(--button-dark-blue);
+  border: 1px solid var(--button-dark-blue);
+  border-radius: 4px;
+  color: var(--wight-text);
+  font-size: 16px;
+  font-weight: 500;
+  height: 60px;
+  width: 390px;
+  margin: 20px 0;
+  transition: all 200ms ease-in-out;
+}
+
+.login__link_signup {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 30px;
+  color: var(--light-text);
+}
+
+.login__remeber_forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--light-text);
+  width: 390px;
+}
+
+.login__remeber {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--light-text);
+}
+
+#login__link_ForgotPassword {
+  text-decoration: none;
+}
+
+a {
+  color: var(--button-dark-blue);
+}
+
+input:hover {
+  border: 1px solid var(--button-dark-blue);
+  box-shadow: 0 8px 15px rgba(140, 152, 164, 0.1);
+}
+
+button:hover {
+  background-color: var(--wight-back);
+  color: var(--button-dark-blue);
+}
+
+a:hover {
+  color: var(--button-dark-blue);
+}
+
+.login__checkbox_rememberMe {
+  vertical-align: baseline;
+  border-radius: 4px;
+  padding: 5px;
+  margin: 0 8px 0 0;
+  background-color: var(--color-background-elements);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 1px solid var(--color-border-elements);
+}
+
+.login__checkbox_rememberMe:checked[type="checkbox"] {
+  background-color: var(--color-background-elements);
+  border-color: rgba(9, 7, 97, 1);
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='-3 -3 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='6' height='6' rx='2' fill='%23090761'/%3E%3C/svg%3E");
+}
+
+.login__checkbox_rememberMe:focus {
+  border-color: var(--color-border-elements);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(231, 231, 236, 0.5);
+}
+
+.login__checkbox_rememberMe:focus:checked {
+  border-color: rgba(9, 7, 97, 1);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(231, 231, 236, 0.5);
+}
