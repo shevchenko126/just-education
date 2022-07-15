@@ -1,66 +1,94 @@
 import './styles.css';
 import Question from './Question';
-import {useState} from 'react';
+import QuizComplete from '../commonComponents/QuizComplete'
+import ScreenSize from "../commonComponents/ScreenSize";
+import {useEffect, useRef, useState} from 'react';
+
 
 
 const Quiz = (props) => {
     const questions = props.questions;
 
-    const [value, setValue] = useState();
-    
-    const handlerChange = (e) => {
-        setValue(e.target.value);
-	};
-    
-    
-    const radioQuestions = ["A tweet", "A hashtag", "A tag"];
-    const [checked, setChecked] = useState(null);
+    // STORE SCREEN(WINDOW) WIDTH
+    var width = ScreenSize().width;
 
-    return(
-        <div className="container__quiz">
-            <div className="quiz__title h-1">Quiz</div>
-            <div className="quiz__subtitle p">Ready to go?</div>
-            <div className="container__questions">
-                {questions.map((item, index) => 
-                <Question number = {index + 1} item = {item} key = {index}/>)}
-                {/* <div className="question__item">
-                    <div className="question__item-question">
-                        <div className="question__attributes">
-                            <div className="question__attributes-title h-3">Question #</div>
-                            <div className="question__attributes-interact p">
-                                <div>Flag Question</div>
-                                <div>Edit Question</div>
+	const [value, setValue] = useState("");
+
+	const handlerChange = (e) => {
+		setValue(e.target.value);
+
+		console.log(e.target.value);
+	};
+    // 
+    
+    // GETTING ELEMENT WIDTH
+    const ref = useRef(null);
+
+    const [elementWidth, setWidth] = useState(0);
+    const [elementHeight, setHeight] = useState(0);
+
+    const getElemSize =() => {
+        const newWidth = ref.current.offsetWidth;
+        setWidth(newWidth);
+        const newHeight = ref.current.offsetHeight;
+        setHeight(ref.current.offsetHeight);
+    };
+
+    useEffect(() => {
+        getElemSize();
+    }, [ref]);
+
+    useEffect(() => {
+        window.addEventListener("resize", getElemSize);
+        return () => {
+            window.removeEventListener("resize", getElemSize);
+        } 
+    }, []);
+    // 
+
+     return(
+        <>
+            <div style={{display:"flex", overflowX: "hidden"}}>
+                <div style={{width: "300px"}}></div>
+                <div style={{flexGrow: "1"}}>
+                    <div className="wrapper__quiz">
+                        <div className="quiz__title h-1">Quiz</div>
+                        <div className="quiz__subtitle p">Ready to go?</div>
+                        <div className="wrapper__questions panel drop-shadow"
+                            style={{position: "relative"}}>
+                            {questions.map((item, index) => 
+                            <Question number = {index + 1} item = {item} key = {index}/>)}
+                            {width > 1350 ? <QuizComplete progress="80"/> : <div></div>}
+                            <div style={{marginTop: "30px", textAlign: "right"}}>
+                                <button className="submit-button p">Finish attempt ...</button>     
                             </div>
+                            <div ref={ref} style={{marginTop: "50px", 
+                                    display: "flex",
+                                    justifyContent: "space-between"}}>
+                                <button className={elementWidth > 700 ? 
+                                    "backward-button" : 
+                                    "backward-button minimal-button"}>
+                                    <span >Forum netiquette</span>
+                                </button> 
+                                <select className="jump-to-select drop-shadow" value={value} onChange={handlerChange}>
+                                    <option disabled={true} value="">Jump to..</option>
+                                    {Array.from({length: 6}).map((item, index) => 
+                                    <option value={`Page-${index + 1}`} key={index}>{`Page-${index + 1}`}</option>)}
+                                </select>
+                                <button className={elementWidth > 700 ? 
+                                    "forward-button" : 
+                                    "forward-button minimal-button"}>
+                                    <span >Share examples of digital...</span>
+                                </button>
+                            </div>
+                            {/* <div style={{textAlign: "center", display: "block"}}>{elementWidth}</div>                                 */}
                         </div>
-                        <div className="question_properties p">
-                            <div>Not yet answered</div>
-                            <div>Marked out of 1.00</div>
-                        </div>
-                        <div className="question__subject h-2">You are watching the TV news and see this appear on the screen:</div>
                     </div>
-                    <div className="question__item-unswer">
-                        <div className="list__title p">Select one:</div>
-                        <ul class="list__style-none">                          
-                        {radioQuestions.map((item, index)=>(
-                            <li className="list__item" key={item}>
-                                <label>
-                                    <input
-                                        type="radio" name="222" id={index + 1} key={item}
-                                        checked={checked === item}
-                                        onChange={() => setChecked(item)
-                                        }
-                                    />
-                                </label>
-                                <p className="h-3">{String.fromCharCode(97 + index)}.</p>
-                                <p className="p">{item}</p> 
-                            </li>
-                        ))}
-                        </ul>
-                    </div>
-                </div> */}
+                </div>
             </div>
-        </div>
+        </>
+
     )
 }
 
-export default Quiz;
+export default Quiz; //{elementWidth > 700 ? "Share examples of digital..." : ""}

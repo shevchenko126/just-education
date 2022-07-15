@@ -1,6 +1,7 @@
 import '../styles.css';
 import RadioQuestion from './radioQuestion';
 import MatchQuestion from './matchQuestion';
+import WriteQuestion from './writeQuestion';
 import React from 'react';
 
 
@@ -10,7 +11,6 @@ const Question = (props) => {
         number: props.number
     };
 
-
     function contentString(content) {
         switch (content.type) {
             case "radio":
@@ -18,12 +18,7 @@ const Question = (props) => {
             case "match":
                 return <MatchQuestion item={content}/>
             case "write":
-                return (
-                    <>
-                        <div>write</div>
-                    </>
-
-                );
+                return <WriteQuestion item={content}/>
             case "select":
                 return (
                     <div>select</div>
@@ -36,7 +31,6 @@ const Question = (props) => {
                 return null;
         }
     }
-
 
     return(
         <div className="question__item">

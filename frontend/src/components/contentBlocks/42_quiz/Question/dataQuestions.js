@@ -30,7 +30,7 @@ const dataQuestions = [
     },
 
     {
-        id: "1",
+        id: "2",
         type: "match",
         subject: "Complete the sentences",
         statements:
@@ -50,13 +50,13 @@ const dataQuestions = [
     },
 
     {
-        id: "1",
+        id: "3",
         type: "write",
         subject: "A short message on Twitter is called a ?????"
     },
 
     {
-        id: "1",
+        id: "4",
         type: "select",
         subject: "Match the icons to their sites",
         variants: [
@@ -69,7 +69,7 @@ const dataQuestions = [
     },
 
     {
-        id: "1",
+        id: "5",
         type: "boolean",
         subject: "Facebook was founded in 2005"
     }    
