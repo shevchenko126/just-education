@@ -7,8 +7,15 @@
   --light-text: #77838f;
 }
 
+/* Block general */
+
+.wrapper-general {
+  padding: 15px;
+}
+
 .block-general {
   font-family: 'Jost', sans-serif;
+  background: rgb(255, 255, 255);
   max-width: 1500px;
   padding: 31px;
   outline-offset: 0px;
@@ -135,8 +142,19 @@ label {
   }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 420px) {
+  .block-general {
+    padding: 10px;
+    transition: all 0.5s;
+  }
+
+  form {
+    max-width: 370px;
+  }
+
   .general-form__button {
-    width: 240px;
+    display: block;
+    margin: 31px auto 21px;
+    width: 268px;
   }
 }
