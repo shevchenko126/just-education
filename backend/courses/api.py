@@ -11,8 +11,12 @@ class GetCourses(viewsets.ModelViewSet):
     queryset = Course.objects.all()
 
     def list(self, request):
-        # slicing is used to re-evaluate the queryset
-        serializer = self.serializer_class(self.queryset[:], many=True)
+        if request.GET.get('featured') == '1':
+            qs = self.queryset.filter(featured=True)
+        else:
+            # slicing is used to re-evaluate the queryset
+            qs = self.queryset[:]
+        serializer = self.serializer_class(qs, many=True)
         return Response({
             'success': True,
             'courses': serializer.data,
@@ -26,15 +30,4 @@ class GetCourses(viewsets.ModelViewSet):
         return Response({
             'success': True,
             'course': serializer.data,
-        })
-
-    @action(detail=False)
-    def featured(self, request, pk=None):
-        """Featured courses are at url '...courses/featured' """
-        queryset = self.queryset.filter(featured=True)
-        serializer = self.serializer_class(queryset, many=True)
-        return Response({
-            'success': True,
-            'featured': True,
-            'courses': serializer.data,
         })
