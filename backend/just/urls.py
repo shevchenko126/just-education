@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from courses.api import GetCourses
+from notifications.api import GetNotifications
 
 API_version = 1
 
 router = routers.DefaultRouter()
 router.register('courses', GetCourses, 'courses')
+router.register('notifications', GetNotifications, 'notifications')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
