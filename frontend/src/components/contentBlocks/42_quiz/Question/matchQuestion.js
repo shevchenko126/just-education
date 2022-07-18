@@ -5,6 +5,7 @@ import {useState} from 'react';
 const MatchQuestion = (props) => {
     var inputClass = "input drop-shadow";
     const content = props.item;
+    const width = props.width;
 
     const [answer, setAnswer] = useState();
     const [focused, setFocusOn] = useState();
@@ -33,7 +34,7 @@ const MatchQuestion = (props) => {
     }
 
     return(
-        <>                      
+        <>                    
         {content.statements.map((item, index)=>(
             <div key={`${content.id}s${index}`}>
                 <p className="p"
@@ -41,7 +42,7 @@ const MatchQuestion = (props) => {
                     {item}
                 </p>
                 <input 
-                className={index !== focused ? inputClass : inputClass +"input-active"} 
+                className={index !== focused ? inputClass : inputClass + "input-active"} 
                 type="text" id={`${content.id}i${index}`}
                 onClick={() => setFocused(index)}
                 readOnly = {true}
@@ -50,7 +51,7 @@ const MatchQuestion = (props) => {
             </div>
 
         ))}
-        <div style={{marginBottom: "30px"}}>
+        <div style={{marginBottom: "15px"}}>
             {content.variants.map((item, index)=>(
                 <button className="button question-button p" 
                     style={{display: "inline-block"}}
