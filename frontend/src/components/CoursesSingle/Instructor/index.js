@@ -5,7 +5,7 @@ import './instructor.css';
 const index = () => {
   return (
     <div className="instructor container">
-        <div class='row'>
+        <div className='row'>
         <div className="col-8 col-sm-12">
             <div className="instructor__name">
                 <p>About the instructor</p>
@@ -32,10 +32,10 @@ const index = () => {
                 </div>
             </div>
             <div className="instructor__text">
-                <div class='text-about'>
+                <div className='text-about'>
                     <p>I am a UI/UX designer and an iOS developer with having almost six years of experience in application development and also ten years of graphic design and User Interface design.</p>
                 </div>
-                <div class='text-passion'>
+                <div className='text-passion'>
                     <p>My passion is helping people to learn new skills in a short-term course and achieve their goals. I've been designing for more than ten years and developing iOS apps for four years. It's my honor if I could help you learn to program in a simple word. I currently am teaching iOS 13, Swift 5, ARKit 3, Sketch 5, Illustrator, Photoshop, Cinema 4D, HTML, CSS, JavaScript, etc.</p>
                 </div>
             </div>

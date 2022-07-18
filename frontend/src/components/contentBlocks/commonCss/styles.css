@@ -8,10 +8,18 @@
     --light-orange: #FFC78B;
     --light-violet: #B8B2FD;
     --dark-gray-70:rgba(47, 45, 81, 0.7);
+    --light-gray-back: #F7F9FB;
+    --active-button-back: #4A8F9F;
+    --active-button-shadow: #8acfdf;
+    --submit-button-back: #196ECD;
+    --active-submit-button-back: #155fb3;
+    --active-submit-button-shadow: #60a8fa;
+ 
 
-    --font-size-big: 35px;                  /* 2.1875em  h1 */
-    --font-size-medium: 20px;               /* 1.25em  h2 */
-    --font-size-medium-smaller: 18px;       /* 1.125em  h3 */
-    --font-size-small: 16px;                /* 1em  h4, p */
-    --font-size-small-smaller: 14px;        /* 0.875em   h5 */
+    --font-size-big: 35px;                  /* 2.1875rem  h1 */
+    --font-size-big-smaller: 30px;          /* 1.875rem */
+    --font-size-medium: 20px;               /* 1.25rem  h2 */
+    --font-size-medium-smaller: 18px;       /* 1.125rem  h3 */
+    --font-size-small: 16px;                /* 1rem  h4, p */
+    --font-size-small-smaller: 14px;        /* 0.875rem   h5 */
   } 
