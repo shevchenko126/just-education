@@ -1,6 +1,5 @@
-
-const QuizComplete = ({progress}) => {
-
+const CompleteNavigation = ({progress}) => {
+    
     return (
         <div style={{
             position: "absolute", 
@@ -33,5 +32,5 @@ const QuizComplete = ({progress}) => {
     )
 }
 
-export default QuizComplete;
+export default CompleteNavigation;
 

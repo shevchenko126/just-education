@@ -59,9 +59,8 @@ input{
     background-color: var(--light-gray-back);
     border: solid 1px var(--grey-back);
     border-radius: 4px;
-    transition: all 0.15s ease-in-out;
-    cursor: pointer;
     caret-color: transparent;
+    transition: all 0.15s ease-in-out;
 }
 
 .button:hover{
@@ -81,6 +80,17 @@ input{
     color: white; 
 }
 
+.button-back{
+    box-sizing: border-box;
+    display: inline-block;
+    background-color: var(--light-gray-back);
+    border: solid 1px var(--grey-back);
+    border-radius: 4px;
+    caret-color: transparent;
+    line-height: 48px;
+    padding: 0 20px;
+    margin: 0 20px 15px 0;
+}
 
 /* GENERAL - END    *********************************************/
 
@@ -91,6 +101,7 @@ input{
     box-sizing: border-box;
     padding: 60px;
     background-color: var(--light-gray-back);
+    overflow-x: hidden;
 }
 
 .quiz__title{
@@ -105,7 +116,6 @@ input{
     margin-bottom: 30px;
 }
 
-
 .wrapper__questions{
     padding: 30px;
     width: calc(100% - 365px);
@@ -118,7 +128,7 @@ input{
     margin-top: 30px;
 }
 
-.wrapper__questions>.question__item:first-child{
+.wrapper__questions>div>.question__item:first-child{
     margin-top: 0;
 }
 
@@ -184,9 +194,22 @@ input{
     padding-left: 0;
 }
 
+.clear-choise,
 .list__title,
 .list__item > p{
     margin-bottom: 30px;
+}
+
+.clear-choise{
+    font-size: var(--font-size-small);
+    font-weight: 400;
+    color: var(--submit-button-back);
+    text-decoration: underline;
+    cursor: pointer;    
+}
+
+.cleared{
+    color:purple;
 }
 
 .list__item > p{
@@ -348,6 +371,17 @@ input{
     border-radius: 4px;
     top: 0px;
     color: var(--light-text);
+}
+
+.choose-select{
+    display: inline-block;
+    height: 50px;
+    width: 200px;
+    border-color: var(--grey-back);
+    border-radius: 4px;
+    color: var(--light-text);
+    padding: 0 10px;
+    margin: 0 0 15px 0;
 }
 
 

@@ -2,33 +2,37 @@ import '../styles.css';
 import RadioQuestion from './radioQuestion';
 import MatchQuestion from './matchQuestion';
 import WriteQuestion from './writeQuestion';
-import React from 'react';
-
+import SelectQuestion from './selectQuestion'
 
 const Question = (props) => {
     const item = {
         content: props.item,
-        number: props.number
+        number: props.number,
+        elementWidth: props.elementWidth,
     };
 
-    function contentString(content) {
+    const contentString = (content, elementWidth) => {
         switch (content.type) {
             case "radio":
-                return <RadioQuestion item={content}/>
+                return <RadioQuestion 
+                item={content} 
+                elementWidth={elementWidth} 
+                isMarked = {content.marked}
+                isClearable = {content.isClearable}/>
             case "match":
-                return <MatchQuestion item={content}/>
+                return <MatchQuestion 
+                item={content} 
+                elementWidth={elementWidth}/>
             case "write":
-                return <WriteQuestion item={content}/>
+                return <WriteQuestion 
+                item={content} 
+                elementWidth={elementWidth}/>
             case "select":
-                return (
-                    <div>select</div>
-                )
-            case "boolean":
-                return (
-                    <div>boolean</div>
-                )                
+                return <SelectQuestion 
+                item={content} 
+                elementWidth={elementWidth}/>                  
             default:
-                return null;
+                return <></>;
         }
     }
 
@@ -49,7 +53,7 @@ const Question = (props) => {
                 <div className="question__subject h-2">{item.content.subject}</div>
             </div>
             <div className="question__item-unswer">
-                {contentString(item.content)}
+                {contentString(item.content, item.elementWidth)}
             </div>
         </div>
     )

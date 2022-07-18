@@ -1,6 +1,4 @@
 import '../styles.css';
-import {useState} from 'react';
-
 
 const WriteQuestion = (props) => {
     const item = props.item;   
