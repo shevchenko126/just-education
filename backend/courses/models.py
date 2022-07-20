@@ -1,3 +1,4 @@
+from unicodedata import category
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import timedelta
@@ -19,6 +20,7 @@ class Course(models.Model):
                                null=True)
     rating = RatingField(verbose_name='рейтинг', blank=True, null=True)
     featured = models.BooleanField(verbose_name='рекомендований', default=False)
+    
 
     def __str__(self):
         return self.title
@@ -70,3 +72,20 @@ class CourseLecture(models.Model):
     class Meta:
         verbose_name = "лекція курсу"
         verbose_name_plural = "лекції курсів"
+
+class CourseCategory(models.Model):
+     title = models.CharField(verbose_name="назва категорії",
+                                     max_length=100, )
+     category = models.ForeignKey(Course,
+                                       verbose_name="категорія",
+                                       related_name="category_courses",
+                                       on_delete=models.CASCADE,
+                                       blank=True,
+                                       null=True)
+     
+     def __str__(self):
+        return self.title
+    
+     class Meta:
+        verbose_name = "категорія"
+        verbose_name_plural = "категорії"

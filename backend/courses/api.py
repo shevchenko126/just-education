@@ -1,8 +1,9 @@
+from unicodedata import category
 from rest_framework import viewsets
 from rest_framework.response import Response
-
-from .serializers import BaseCourseSerializer, SingleCourseSerializer
-from .models import Course
+from django.shortcuts import get_object_or_404 
+from .serializers import BaseCourseSerializer, SingleCourseSerializer, CategorySerializer 
+from .models import Course, CourseCategory
 
 
 class GetCourses(viewsets.ModelViewSet):
@@ -30,3 +31,23 @@ class GetCourses(viewsets.ModelViewSet):
             'success': True,
             'course': serializer.data,
         })
+class GetCourseCategory(viewsets.ModelViewSet):
+    serializer_class = CategorySerializer
+    queryset = CourseCategory.objects.all()
+    
+    def list(self, request):
+        
+        category = CourseCategory.objects.all()
+        category_serialized = self.serializer_class(category, many=True).data
+        
+        return Response({
+            'success': True,
+            'category': CategorySerializer
+        })
+        
+    def get_object(self):
+        slug = int(self.kwargs['pk'])
+        print(slug)
+        category = CourseCategory.objects.filter(category_id=slug)
+        obj = get_object_or_404(category)
+        return obj 
