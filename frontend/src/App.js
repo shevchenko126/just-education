@@ -22,7 +22,8 @@ function App() {
       <Tabs />
       <Instructor />
       <Just11home5block />
-      </Footer>*/}
+      </Footer>
+      */}
     </>
   );
 }
