@@ -37,25 +37,27 @@ const Question = (props) => {
     }
 
     return(
-        <div className="question__item">
-            <div className="question__item-question">
-                <div className="question__attributes">
-                    <div className="question__attributes-title h-3">Question {item.number}</div>
-                    <div className="question__attributes-interact p">
-                        <div>Flag Question</div>
-                        <div>Edit Question</div>
+        <>
+            <div className="question__item">
+                <div className="question__item-question">
+                    <div className="question__attributes">
+                        <div className="question__attributes-title h-3">Question {item.number}</div>
+                        <div>
+                            <div className="question__attributes-interact p">Flag Question</div>
+                            <div className="question__attributes-interact p">Edit Question</div>
+                        </div>
                     </div>
+                    <div className="question_properties p">
+                        <div>Not yet answered</div>
+                        <div>Marked out of 1.00</div>
+                    </div>
+                    <div className="question__subject h-2">{item.content.subject}</div>
                 </div>
-                <div className="question_properties p">
-                    <div>Not yet answered</div>
-                    <div>Marked out of 1.00</div>
+                <div className="question__item-unswer">
+                    {contentString(item.content, item.elementWidth)}
                 </div>
-                <div className="question__subject h-2">{item.content.subject}</div>
             </div>
-            <div className="question__item-unswer">
-                {contentString(item.content, item.elementWidth)}
-            </div>
-        </div>
+        </>
     )
 }
 

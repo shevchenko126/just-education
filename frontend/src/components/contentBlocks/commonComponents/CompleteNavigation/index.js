@@ -1,4 +1,8 @@
-const CompleteNavigation = ({progress}) => {
+import ProgressBar from '../ProgessBar'
+import NavigationButtons from '../NavigationButtons'
+import FinishButton from '../FinishButton'
+
+const CompleteNavigation = ({progress, pagesNumber}) => {
     
     return (
         <div style={{
@@ -6,31 +10,24 @@ const CompleteNavigation = ({progress}) => {
             top: "-1px", right: "-1px",
             transform: "translateX(365px)"
         }}>
-        <div className="wrapper__complete panel panel-sm drop-shadow">
+        <div className="wrapper__complete panel panel-sm drop-shadow"
+            style={{marginBottom: "15px"}}>
             <p className="h-2">Quiz Complete</p>
-            <div className="progress-bar__title">
-                <p className="p">Completed</p>
-                <p className="p">{progress}</p>
-            </div>
-            <div className="progress-bar drop-shadow">
-                <div className="progress__bar-value"
-                    style={{width: `${progress}%`}}></div>
-            </div>
+            <ProgressBar progress={progress} showTytle="true"/>
         </div>
         <div className="wrapper__nav panel panel-sm drop-shadow">
             <p className="h-2">Quiz Navigation</p>
             <div className="wrapper__buttons">
-                {Array.from({length: 6}).map((item, index) => 
-                <button 
-                className="button nav-button p"
-                key={`nb${index}`}
-                >{index + 1}</button>)}     
+                <NavigationButtons pagesNumber = {pagesNumber}/>   
             </div>
-            <button className="submit-button p">Finish attempt ...</button>
+            <FinishButton/>
         </div>
     </div>
     )
 }
 
 export default CompleteNavigation;
+
+
+
 
