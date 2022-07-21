@@ -19,6 +19,7 @@ from rest_framework import routers
 from courses.api import GetCourses
 from notifications.api import GetNotifications
 from registration.api import RegistrationData
+from review.api import GetReviews
 
 API_version = 1
 
@@ -26,6 +27,7 @@ router = routers.DefaultRouter()
 router.register('courses', GetCourses, 'courses')
 router.register('notifications', GetNotifications, 'notifications')
 router.register('registration', RegistrationData, 'registration')
+router.register('reviews', GetReviews, 'reviews')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
