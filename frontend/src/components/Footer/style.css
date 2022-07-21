@@ -1,0 +1,234 @@
+
+:root {
+    --blue: #377dff;
+    --dark-blue: #21325b;
+    --violet: #b253f6;
+    --grey-back: #e7e7ec;
+    --dark-text: #2f2d51;
+    --light-text: #77838f;
+}
+
+body {
+    font-family: 'Jost', sans-serif;
+}
+
+.title__name{
+    color: #FFFFFF;
+    padding-bottom: 15px;
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: left;
+}
+
+.footer{
+    display: block;
+    position: relative;
+    max-width: 1920px;
+    min-height: 605px;
+    z-index: 50;
+    background-color: var(--dark-blue);
+    padding: 100px 120px 10px 120px;
+}
+
+.container{
+    position: relative;
+    max-width: 1168px;
+    min-height: 360px;
+}
+
+.footer__logo{
+    text-align: left;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.footer__address p{
+    margin-top: 35px;
+    color: #FFFFFF;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: left;
+}
+
+.social-icons{
+    min-height: 55px;
+    text-align: left;
+}
+
+.social-icons a {
+    color: #FFFFFF;
+    max-width: 35px;
+}
+
+span{
+    position: relative;
+    padding: 15px 40px 15px 0;
+}
+
+.circle{
+    background: url("../../../public/images/Ellipse_12.png") no-repeat;
+    position: relative;
+    width: 35px;
+    height: 35px;
+    right: 25px;
+    border-radius: 4px;
+    top: 5px;
+}
+
+.instagram a img{
+    position: relative;
+    width: 13px;
+    height: 16px;
+    font-family: 'Font Awesome 5 Brands';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    left: 26px;
+    bottom: 4px;
+    text-transform: capitalize;
+    color: #21325B;
+}
+
+.list-unstyled li a{
+    color: #FFFFFF;
+    text-decoration: none;
+    padding-top: 35px;
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 35px;
+    text-transform: capitalize;
+    text-align: left;
+}
+
+.list-unstyled li{
+    margin-top: 1px;
+    text-align: left;
+}
+
+.footers-one.footers-two.footers-three.footers-four.footers-five{
+    display: block;
+    position: relative;
+}
+
+.bottom-area{
+    position: relative;
+    max-width: 1170px;
+    min-height: 71px;
+}
+
+.border__top{
+    position: relative;
+    background: url("../../../public/images/Rectangle 29.png") no-repeat;
+    color: #FFFFFF26;
+}
+
+.copyright{
+    color: #FFFFFF;
+    size: 14px;
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    align-items: center;
+    text-transform: capitalize;
+    text-align: left;
+}
+
+.links__bottom{
+    text-align: left;
+    margin-bottom: 5px;
+    right: -15px;
+}
+
+.links__bottom a {
+    size: 14px;
+    margin: 0 12px 12px 0;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    text-transform: capitalize;
+    text-align: left;
+}
+
+.links__bottom a:hover{
+    color: #FFFFFF;
+}
+
+.lang__block{
+    position: relative;
+    text-align: left;
+    width: 140px;
+    height: 40px;
+    bottom: 5px;
+    left: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 8px 15px rgba(140, 152, 164, 0.1);
+    border-radius: 4px;
+}
+
+#lang{
+    position: relative;
+    width: 120px;
+    height: 35px;
+    box-shadow: #8C98A41A;
+    color: #FFFFFF;
+    border-radius: 4px;
+    text-indent: 15px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    bottom: -7px;
+    right: -15px;
+    text-decoration: none;
+}
+
+.lang__block a img{
+    position: absolute;
+    left: 100px;
+    top: 4px;
+}
+
+#back-top{
+    position: relative;
+    cursor: pointer;
+    z-index: 9999999;
+}
+
+#back-top a{
+    display: block;
+    background: url("../../../public/images/Ellipse 13.png") no-repeat;
+    background-size: 95% 80%;
+    width: 75px;
+    height: 75px;
+    position: relative;
+    top: -45px;
+    left: 140px;
+    float: right;
+}
+
+#back-top img{
+    margin-left: -3px;
+    margin-top: 20px;
+    position: relative;
+}
+
+
