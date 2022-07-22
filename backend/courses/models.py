@@ -18,19 +18,19 @@ class Course(models.Model):
                                blank=True,
                                null=True)
     rating = RatingField(verbose_name='рейтинг', blank=True, null=True)
+    featured = models.BooleanField(verbose_name='рекомендований', default=False)
 
     def __str__(self):
         return self.title
 
     class Meta:
-
         verbose_name = "курс"
         verbose_name_plural = "курси"
 
 
 class CourseChapter(models.Model):
-    chapter_title = models.CharField(verbose_name="назва розділу",
-                                     max_length=100,)
+    title = models.CharField(verbose_name="назва розділу",
+                             max_length=100, )
     duration = models.DurationField(verbose_name="тривалість",
                                     default=timedelta(days=1),
                                     help_text=('(дні год:хв:сек)'),
@@ -42,7 +42,7 @@ class CourseChapter(models.Model):
                                null=True)
 
     def __str__(self):
-        return self.chapter_title
+        return self.title
 
     class Meta:
         verbose_name = "розділ курсу"
@@ -50,8 +50,8 @@ class CourseChapter(models.Model):
 
 
 class CourseLecture(models.Model):
-    lecture_title = models.CharField(verbose_name="назва лекції",
-                                     max_length=100,)
+    title = models.CharField(verbose_name="назва лекції",
+                                     max_length=100, )
     duration = models.DurationField(verbose_name="тривалість",
                                     default=timedelta(minutes=25),
                                     help_text=('(дні год:хв:сек)'),
@@ -59,13 +59,13 @@ class CourseLecture(models.Model):
                                     null=True)
     course_chapter = models.ForeignKey(CourseChapter,
                                        verbose_name="розділ курсу",
-                                       related_name="course_lectures",
+                                       related_name="chapter_lectures",
                                        on_delete=models.CASCADE,
                                        blank=True,
                                        null=True)
 
     def __str__(self):
-        return self.lecture_title
+        return self.title
 
     class Meta:
         verbose_name = "лекція курсу"

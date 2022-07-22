@@ -8,7 +8,7 @@ const Page22CourseSingleV1SidebarLatestCourses = () => {
     return (
       
       <div className="container-fluid" id="latest-courses__block">
-      <div class="col-12" id="latest-courses__title">Latest Courses</div>
+      <div className="col-12" id="latest-courses__title">Latest Courses</div>
   
       <div className="row" id="latest-courses__list">
           <div className="col-4" id="latest-courses__image-block"><a href="#"><img src="{ svgCourseThumbnail }" className="img-fluid" alt="course-icon" id="latest-courses__image" /></a></div>

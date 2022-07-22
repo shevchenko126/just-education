@@ -2,13 +2,27 @@ import React from "react";
 import "./index.css";
 
 const Just22courseV1 = () => {
-  const [buttonClick, setbuttonClick] = React.useState(false);
+  const [buttonClick, setButtonClick] = React.useState(false);
+  const [blocks, setBlocks] = React.useState([]);
+
+  const getData = () => {
+    fetch("curriculum.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((blocks) => setBlocks(blocks))
+      .catch((error) => console.log(error));
+  };
 
   const onButtonClick = (event) => {
     event.preventDefault();
-    setbuttonClick(true);
-    console.log("onButtonClick");
+    setButtonClick(true);
+    getData();
   };
+
   return (
     <div className="block-overview container">
       <div className="block-overview__nav row">
@@ -46,544 +60,84 @@ const Just22courseV1 = () => {
         </ul>
       </div>
       <div className="block-overview__line"></div>
-      {buttonClick && (
-        <div className="block-accordion">
-          <div className="accordion-wrapper">
-            <div
-              className="block-accordion accordion accordion-flush"
-              id="accordionFlushOne"
-            >
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="flush-headingOne">
-                  <button
-                    className="accordion-button accordion-button__custom"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseOne"
-                    aria-expanded="false"
-                    aria-controls="flush-collapseOne"
+      <div className="block-accordion">
+        {buttonClick &&
+          blocks.map((block) => (
+            <div key={block.id} id={block.id} className="accordion-wrapper">
+              <div
+                className="block-accordion accordion accordion-flush"
+                id={`accordionFlush${block.id}`}
+              >
+                <div className="accordion-item">
+                  <h2
+                    className="accordion-header"
+                    id={`flush-heading${block.id}`}
                   >
-                    Introduction
-                  </button>
-                </h2>
-                <div
-                  id="flush-collapseOne"
-                  className="accordion-collapse collapse show"
-                  aria-labelledby="flush-headingOne"
-                  data-bs-parent="#accordionFlushOne"
-                >
-                  <div className="accordion-body">
-                    <div className="accordion-row">
-                      <div className="accordion-left__block">
-                        <div className="accordion-img__left">
-                          <img src="/images/icons/list.svg" alt="" />
-                        </div>
-                        <div className="accordion-text">
-                          Introduction to the course
-                        </div>
-                      </div>
-                      <div className="accordion-right__block">
-                        <div className="accordion-question">3 question</div>
-                        <div className="accordion-time">30 min</div>
-                        <div className="accordion-img__right">
-                          <a href="...">
-                            <img src="/images/icons/play.svg" alt="" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordion-body">
-                    <div className="accordion-row">
-                      <div className="accordion-left__block">
-                        <div className="accordion-img__left">
-                          <img src="/images/icons/watch.svg" alt="" />
-                        </div>
-                        <div className="accordion-text">Introduction</div>
-                      </div>
-                      <div className="accordion-right__block">
-                        <div className="accordion-img__right">
-                          <a href="...">
-                            <img src="/images/icons/unlock.svg" alt="" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordion-body">
-                    <div className="accordion-row">
-                      <div className="accordion-left__block">
-                        <div className="accordion-img__left">
-                          <img src="/images/icons/list.svg" alt="" />
-                        </div>
-                        <div className="accordion-text">
-                          Structure of the course
-                        </div>
-                      </div>
-                      <div className="accordion-right__block">
-                        <div className="accordion-time">30 min</div>
-                        <div className="accordion-img__right">
-                          <a href="...">
-                            <img src="/images/icons/play.svg" alt="" />
-                          </a>
+                    <button
+                      className="accordion-button collapsed accordion-button__custom"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target={`#flush-collapse${block.id}`}
+                      aria-expanded="false"
+                      aria-controls={`flush-collapse${block.id}`}
+                    >
+                      {block.name}
+                    </button>
+                  </h2>
+                  <div
+                    id={`flush-collapse${block.id}`}
+                    className="accordion-collapse collapse"
+                    aria-labelledby={`flush-heading${block.id}`}
+                    data-bs-parent={`#accordionFlush${block.id}`}
+                  >
+                    {block.items.map((obj, index) => (
+                      <div key={index} className="accordion-body">
+                        <div className="accordion-row">
+                          <div className="accordion-left__block">
+                            <div className="accordion-img__left">
+                              <img
+                                src={`/images/icons/${obj.lefticon}.svg`}
+                                alt=""
+                              />
+                            </div>
+                            <div className="accordion-text">
+                              {obj.description}
+                            </div>
+                          </div>
+                          <div className="accordion-right__block">
+                            {obj.lectures && (
+                              <div className="accordion-lectures">
+                                {`${obj.lectures} lectures`}
+                              </div>
+                            )}
+                            {obj.question && (
+                              <div className="accordion-question">
+                                {`${obj.question} question`}
+                              </div>
+                            )}
+                            {obj.time && (
+                              <div className="accordion-time">
+                                {`${obj.time} time`}
+                              </div>
+                            )}
+                            <div className="accordion-img__right">
+                              <a href="...">
+                                <img
+                                  src={`/images/icons/${obj.state}.svg`}
+                                  alt=""
+                                />
+                              </a>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div className="accordion-body">
-                    <div className="accordion-row">
-                      <div className="accordion-left__block">
-                        <div className="accordion-img__left">
-                          <img src="/images/icons/watch.svg" alt="" />
-                        </div>
-                        <div className="accordion-text">Required Tools</div>
-                      </div>
-                      <div className="accordion-right__block">
-                        <div className="accordion-lectures">12 lectures</div>
-                        <div className="accordion-time">45 min</div>
-                        <div className="accordion-img__right">
-                          <a href="...">
-                            <img src="/images/icons/unlock.svg" alt="" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordion-body">
-                    <div className="accordion-row">
-                      <div className="accordion-left__block">
-                        <div className="accordion-img__left">
-                          <img src="/images/icons/list.svg" alt="" />
-                        </div>
-                        <div className="accordion-text">
-                          Get Your Free E-book
-                        </div>
-                      </div>
-                      <div className="accordion-right__block">
-                        <div className="accordion-question">3 question</div>
-                        <div className="accordion-time">30 min</div>
-                        <div className="accordion-img__right">
-                          <a href="...">
-                            <img src="/images/icons/play.svg" alt="" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="accordion-wrapper">
-            <div
-              className="block-accordion accordion accordion-flush"
-              id="accordionFlushTwo"
-            >
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="flush-headingOne">
-                  <button
-                    className="accordion-button accordion-button__custom"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseTwo"
-                    aria-expanded="false"
-                    aria-controls="flush-collapseTwo"
-                  >
-                    Design Basics
-                  </button>
-                </h2>
-                <div
-                  id="flush-collapseTwo"
-                  className="accordion-collapse collapse show"
-                  aria-labelledby="flush-headingTwo"
-                  data-bs-parent="#accordionFlushTwo"
-                >
-                  <div className="accordion-body">
-                    <div className="accordion-row">
-                      <div className="accordion-left__block">
-                        <div className="accordion-img__left">
-                          <img src="/images/icons/list.svg" alt="" />
-                        </div>
-                        <div className="accordion-text">
-                          Intro to Design Basics
-                        </div>
-                      </div>
-                      <div className="accordion-right__block">
-                        <div className="accordion-time">30 min</div>
-                        <div className="accordion-img__right">
-                          <a href="...">
-                            <img src="/images/icons/play.svg" alt="" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordion-body">
-                    <div className="accordion-row">
-                      <div className="accordion-left__block">
-                        <div className="accordion-img__left">
-                          <img src="/images/icons/watch.svg" alt="" />
-                        </div>
-                        <div className="accordion-text">Layout</div>
-                      </div>
-                      <div className="accordion-right__block">
-                        <div className="accordion-lectures">9 lectures</div>
-                        <div className="accordion-question">5 question</div>
-                        <div className="accordion-time">45 min</div>
-                        <div className="accordion-img__right">
-                          <a href="...">
-                            <img src="/images/icons/unlock.svg" alt="" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordion-body">
-                    <div className="accordion-row">
-                      <div className="accordion-left__block">
-                        <div className="accordion-img__left">
-                          <img src="/images/icons/list.svg" alt="" />
-                        </div>
-                        <div className="accordion-text">Visual hierarchy</div>
-                      </div>
-                      <div className="accordion-right__block">
-                        <div className="accordion-time">30 min</div>
-                        <div className="accordion-img__right">
-                          <a href="...">
-                            <img src="/images/icons/play.svg" alt="" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordion-body">
-                    <div className="accordion-row">
-                      <div className="accordion-left__block">
-                        <div className="accordion-img__left">
-                          <img src="/images/icons/watch.svg" alt="" />
-                        </div>
-                        <div className="accordion-text">Visual noise</div>
-                      </div>
-                      <div className="accordion-right__block">
-                        <div className="accordion-lectures">12 lectures</div>
-                        <div className="accordion-question">5 question</div>
-                        <div className="accordion-time">45 min</div>
-                        <div className="accordion-img__right">
-                          <a href="...">
-                            <img src="/images/icons/unlock.svg" alt="" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordion-body">
-                    <div className="accordion-row">
-                      <div className="accordion-left__block">
-                        <div className="accordion-img__left">
-                          <img src="/images/icons/list.svg" alt="" />
-                        </div>
-                        <div className="accordion-text">Visual noise</div>
-                      </div>
-                      <div className="accordion-right__block">
-                        <div className="accordion-img__right">
-                          <a href="...">
-                            <img src="/images/icons/play.svg" alt="" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordion-body">
-                    <div className="accordion-row">
-                      <div className="accordion-left__block">
-                        <div className="accordion-img__left">
-                          <img src="/images/icons/watch.svg" alt="" />
-                        </div>
-                        <div className="accordion-text">Typography</div>
-                      </div>
-                      <div className="accordion-right__block">
-                        <div className="accordion-img__right">
-                          <a href="...">
-                            <img src="/images/icons/unlock.svg" alt="" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="accordion-wrapper">
-            <div
-              className="block-accordion accordion accordion-flush"
-              id="accordionFlushThree"
-            >
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="flush-headingThree">
-                  <button
-                    className="accordion-button collapsed accordion-button__custom"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseThree"
-                    aria-expanded="false"
-                    aria-controls="flush-collapseThree"
-                  >
-                    Figma Academy
-                  </button>
-                </h2>
-                <div
-                  id="flush-collapseThree"
-                  className="accordion-collapse collapse"
-                  aria-labelledby="flush-headingThree"
-                  data-bs-parent="#accordionFlushThree"
-                >
-                  <div className="accordion-body">
-                    <div className="accordion-row">
-                      <div className="accordion-left__block">
-                        <div className="accordion-img__left">
-                          <img src="/images/icons/list.svg" alt="" />
-                        </div>
-                        <div className="accordion-text">
-                          Introduction to the course
-                        </div>
-                      </div>
-                      <div className="accordion-right__block">
-                        <div className="accordion-lectures">12 lectures</div>
-                        <div className="accordion-question">3 question</div>
-                        <div className="accordion-time">30 min</div>
-                        <div className="accordion-img__right">
-                          <a href="...">
-                            <img src="/images/icons/play.svg" alt="" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordion-body">
-                    <div className="accordion-row">
-                      <div className="accordion-left__block">
-                        <div className="accordion-img__left">
-                          <img src="/images/icons/watch.svg" alt="" />
-                        </div>
-                        <div className="accordion-text">Introduction</div>
-                      </div>
-                      <div className="accordion-right__block">
-                        <div className="accordion-lectures">12 lectures</div>
-                        <div className="accordion-question">3 question</div>
-                        <div className="accordion-time">30 min</div>
-                        <div className="accordion-img__right">
-                          <a href="...">
-                            <img src="/images/icons/unlock.svg" alt="" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordion-body">
-                    <div className="accordion-row">
-                      <div className="accordion-left__block">
-                        <div className="accordion-img__left">
-                          <img src="/images/icons/list.svg" alt="" />
-                        </div>
-                        <div className="accordion-text">
-                          Structure of the course
-                        </div>
-                      </div>
-                      <div className="accordion-right__block">
-                        <div className="accordion-lectures">12 lectures</div>
-                        <div className="accordion-question">3 question</div>
-                        <div className="accordion-time">30 min</div>
-                        <div className="accordion-img__right">
-                          <a href="...">
-                            <img src="/images/icons/play.svg" alt="" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordion-body">
-                    <div className="accordion-row">
-                      <div className="accordion-left__block">
-                        <div className="accordion-img__left">
-                          <img src="/images/icons/watch.svg" alt="" />
-                        </div>
-                        <div className="accordion-text">Required Tools</div>
-                      </div>
-                      <div className="accordion-right__block">
-                        <div className="accordion-lectures">12 lectures</div>
-                        <div className="accordion-question">3 question</div>
-                        <div className="accordion-time">30 min</div>
-                        <div className="accordion-img__right">
-                          <a href="...">
-                            <img src="/images/icons/unlock.svg" alt="" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordion-body">
-                    <div className="accordion-row">
-                      <div className="accordion-left__block">
-                        <div className="accordion-img__left">
-                          <img src="/images/icons/list.svg" alt="" />
-                        </div>
-                        <div className="accordion-text">
-                          Get Your Free E-book
-                        </div>
-                      </div>
-                      <div className="accordion-right__block">
-                        <div className="accordion-lectures">12 lectures</div>
-                        <div className="accordion-question">3 question</div>
-                        <div className="accordion-time">30 min</div>
-                        <div className="accordion-img__right">
-                          <a href="...">
-                            <img src="/images/icons/play.svg" alt="" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="accordion-wrapper">
-            <div
-              className="block-accordion accordion accordion-flush"
-              id="accordionFlushFour"
-            >
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="flush-headingFour">
-                  <button
-                    className="accordion-button collapsed accordion-button__custom"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseFour"
-                    aria-expanded="false"
-                    aria-controls="flush-collapseFour"
-                  >
-                    UI Elements
-                  </button>
-                </h2>
-                <div
-                  id="flush-collapseFour"
-                  className="accordion-collapse collapse"
-                  aria-labelledby="flush-headingFour"
-                  data-bs-parent="#accordionFlushFour"
-                >
-                  <div className="accordion-body">
-                    <div className="accordion-row">
-                      <div className="accordion-left__block">
-                        <div className="accordion-img__left">
-                          <img src="/images/icons/list.svg" alt="" />
-                        </div>
-                        <div className="accordion-text">
-                          Introduction to the course
-                        </div>
-                      </div>
-                      <div className="accordion-right__block">
-                        <div className="accordion-lectures">12 lectures</div>
-                        <div className="accordion-question">3 question</div>
-                        <div className="accordion-time">30 min</div>
-                        <div className="accordion-img__right">
-                          <a href="...">
-                            <img src="/images/icons/play.svg" alt="" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordion-body">
-                    <div className="accordion-row">
-                      <div className="accordion-left__block">
-                        <div className="accordion-img__left">
-                          <img src="/images/icons/watch.svg" alt="" />
-                        </div>
-                        <div className="accordion-text">Introduction</div>
-                      </div>
-                      <div className="accordion-right__block">
-                        <div className="accordion-lectures">12 lectures</div>
-                        <div className="accordion-question">3 question</div>
-                        <div className="accordion-time">30 min</div>
-                        <div className="accordion-img__right">
-                          <a href="...">
-                            <img src="/images/icons/unlock.svg" alt="" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordion-body">
-                    <div className="accordion-row">
-                      <div className="accordion-left__block">
-                        <div className="accordion-img__left">
-                          <img src="/images/icons/list.svg" alt="" />
-                        </div>
-                        <div className="accordion-text">
-                          Structure of the course
-                        </div>
-                      </div>
-                      <div className="accordion-right__block">
-                        <div className="accordion-lectures">12 lectures</div>
-                        <div className="accordion-question">3 question</div>
-                        <div className="accordion-time">30 min</div>
-                        <div className="accordion-img__right">
-                          <a href="...">
-                            <img src="/images/icons/play.svg" alt="" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordion-body">
-                    <div className="accordion-row">
-                      <div className="accordion-left__block">
-                        <div className="accordion-img__left">
-                          <img src="/images/icons/watch.svg" alt="" />
-                        </div>
-                        <div className="accordion-text">Required Tools</div>
-                      </div>
-                      <div className="accordion-right__block">
-                        <div className="accordion-lectures">12 lectures</div>
-                        <div className="accordion-question">3 question</div>
-                        <div className="accordion-time">30 min</div>
-                        <div className="accordion-img__right">
-                          <a href="...">
-                            <img src="/images/icons/unlock.svg" alt="" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordion-body">
-                    <div className="accordion-row">
-                      <div className="accordion-left__block">
-                        <div className="accordion-img__left">
-                          <img src="/images/icons/list.svg" alt="" />
-                        </div>
-                        <div className="accordion-text">
-                          Get Your Free E-book
-                        </div>
-                      </div>
-                      <div className="accordion-right__block">
-                        <div className="accordion-lectures">12 lectures</div>
-                        <div className="accordion-question">3 question</div>
-                        <div className="accordion-time">30 min</div>
-                        <div className="accordion-img__right">
-                          <a href="...">
-                            <img src="/images/icons/play.svg" alt="" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+          ))}
+      </div>
     </div>
   );
 };

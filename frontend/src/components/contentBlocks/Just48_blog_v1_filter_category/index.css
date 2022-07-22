@@ -1,0 +1,53 @@
+:root {
+  --dark-text: #2f2d51;
+  --light-text: #77838f;
+  --light-back: #f7f9fb;
+  --grey-back: #e7e7ec;
+  --button-blue: #196ecd;
+}
+
+.blog__filterCategory_wrapper {
+  border: 1px solid var(--grey-back);
+  border-radius: 4px;
+  width: 270px;
+  margin: 30px;
+  padding: 26px 30px;
+}
+
+h2 {
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+  text-align: left;
+  color: var(--dark-text);
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  color: var(--light-text);
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 40px;
+  list-style: none;
+  text-align: left;
+}
+
+.blog__listSubFilter {
+  margin-left: 15px;
+}
+
+.blog__itemFilter:hover {
+  color: var(--button-blue);
+  text-decoration: underline;
+}
+
+.blog__itemSubFilter:hover {
+  color: var(--button-blue);
+  text-decoration: underline;
+}
