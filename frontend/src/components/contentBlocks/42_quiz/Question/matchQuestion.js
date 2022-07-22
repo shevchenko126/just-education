@@ -36,7 +36,7 @@ const MatchQuestion = (props) => {
        return(
         <>
             {content.statements.map((item, index)=>(
-                <div key={`${content.id}s${index}`}
+                <div key={index}
                     style={{
                         caretColor: "transparent",
                         marginBottom: "25px"}}>
@@ -54,7 +54,8 @@ const MatchQuestion = (props) => {
                             inputClass + " input-active"
                         }
                         style = {{textAlign: "center"}} 
-                        type="text" id={`${content.id}i${index}`}
+                        type="text" 
+                        id={index}
                         onClick={() => setFocused(index)}
                         readOnly = {true}
                         defaultValue = {answers[index]}
@@ -67,7 +68,7 @@ const MatchQuestion = (props) => {
                     <button 
                         className={`${isUsed(item)}`}
                         style={{display: "inline-block"}}
-                        key={`${content.id}v${index}`}
+                        key={index}
                         onClick={() => asignAnswer(item)}>
                         {item}
                     </button>

@@ -15,7 +15,7 @@ const SelectQuestionSelect = ({item}) => {
             <select className="choose-select drop-shadow" value={selectedValue} onChange={handlerChange}>
                 <option disabled={true} value="">Choose...</option>
                 {item.options.map((item, index) => 
-                <option value={item}  key={index}>
+                <option value={item} key={index}>
                     {item}
                 </option>)}
             </select>

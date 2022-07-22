@@ -1,19 +1,10 @@
-import {useState} from 'react';
 import SelectQuestionSelect from './selectQuestionSelect.js';
 
 const SelectQuestion = (props) => {
 
     const variants = props.item.variants;
     const currentWidth = props.elementWidth - 60;
-
-    const selectedValues = Array.from({length: variants.length});
-    
-    // UPDATE SELECT VALUE
-    const handlerChange = (e, index) => {
-        selectedValues[index.index]=(e.target.value);
-	}
-    //
-    
+      
     return(
         <>
             <ul className="list__style-none">                          

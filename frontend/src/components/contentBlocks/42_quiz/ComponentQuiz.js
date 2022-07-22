@@ -1,9 +1,7 @@
+import {useEffect, useRef, useState, useContext} from 'react';
 import Question from './Question';
 import CompleteNavigation from '../commonComponents/CompleteNavigation'
-import ScreenSize from "../commonComponents/ScreenSize";
-import {useEffect, useRef, useState, useContext} from 'react';
 import FinishButton from '../commonComponents/FinishButton';
-// import NavigationButtons from '../commonComponents/NavigationButtons';
 import ProgressBar from '../commonComponents/ProgessBar';
 import Context from './Context'
 import NavigationButtons from '../commonComponents/NavigationButtons';
@@ -11,9 +9,9 @@ import NavigationButtons from '../commonComponents/NavigationButtons';
 const ComponentQuiz = (props) => {
     const questions = props.dataQuestions.questions;
     const shownQuestionsNumber = parseInt(props.dataQuestions.shownQuestionsNumber);
-
+    
     const pagesNumber = Math.ceil(questions.length/shownQuestionsNumber);
-
+    
     const {startIndex} = useContext(Context);
     const {setStartIndex} = useContext(Context);
     const {setActiveIndex} = useContext(Context);
@@ -48,10 +46,6 @@ const ComponentQuiz = (props) => {
         setSelectedValue(e.target.value); 
     }
     //
-   
-    // GETTING SCREEN(WINDOW) WIDTH
-    var width = ScreenSize().width;
-    // 
 
     // GETTING ELEMENT WIDTH
     const ref = useRef();
@@ -84,85 +78,18 @@ const ComponentQuiz = (props) => {
     }
 
     const progressNavBar = (progress) => {
-        if(width - 300 <= 1050 && width > 758){         
-            return (
-            <>
-                <div className="wrapper__complete panel panel-sm drop-shadow"
-                    style={{
-                        paddingTop: "0px",
-                        paddingBottom: "10px",
-                        width: "fit-content",
-                        height: "fit-content"
-                    }}>
-                    <div style={{
-                        display: "inline-block",
-                        margin: "10px 0 10px 0",
-                        width: "175px"
-                    }}>
-                        <ProgressBar progress={progress} showTytle="true"/>
-                    </div>
-                    <div style={{
-                        marginLeft: "30px",
-                        width: "fit-content",
-                        display: "inline-block"
-                    }}>
-                        <NavigationButtons  pagesNumber = {pagesNumber}/>
-                    </div>
+        return(
+            <div className="wrapper__progress-nav">
+                <div className="panel-override panel-sm-override drop-shadow-override">
+                <div className="wrapper-progress">
+                    <ProgressBar progress={progress}/>
                 </div>
-            </>
-            );
-        }
-        else if(width <= 758 && width > 576){
-            return (
-                <>
-                <div className="wrapper__complete panel panel-sm drop-shadow"
-                    style={{
-                        paddingTop: "0px",
-                        paddingBottom: "10px",
-                        width: "fit-content",
-                        height: "fit-content"
-                    }}>
-                    <div style={{
-                        margin: "10px 0 10px 0",
-                        width: "100%",
-                        maxWidth: "215px"
-                    }}>
-                        <ProgressBar progress={progress} showTytle="false"/>
-                    </div>
-                    <div style={{
-                        width: "fit-content",
-                        minWidth: "215px",
-                        textAlign: "right"
-                    }}>
-                        <NavigationButtons  pagesNumber = {pagesNumber}/>
-                    </div>
-                </div>
-            </>
-            )
-        }
-        else if(width <= 576){
-            return (
-            <div 
-                style={{
-                    margin: "10px 0 10px 0",
-                    width: "fit-content"
-                }}>
-                <div style={{
-                    width: "100%",
-                    marginBottom: "10px"
-                }}>
-                    <ProgressBar progress={progress} showTytle="false"/>
-                </div>
-                <div style={{
-                    width: "fit-content",
-                    minWidth: "215px",
-                    textAlign: "right"
-                }}>
+                <div className="wrapper-nav-buttons">
                     <NavigationButtons  pagesNumber = {pagesNumber}/>
                 </div>
             </div>
-            )
-        }
+        </div>
+        )
     }
 
      return(
@@ -175,45 +102,45 @@ const ComponentQuiz = (props) => {
                     </div>
                     {progressNavBar("80")}
                 </div>
-                <div className="wrapper__questions panel drop-shadow"                            
-                    style={{position: "relative"}}>
-                    {questions.map((item, index) => 
-                    <div ref={ref}>
-                        <div 
-                            className={
-                                index >= startIndex * shownQuestionsNumber &&
-                                index < (startIndex + 1) * shownQuestionsNumber ?
-                                "" : "visualy-hidden"
-                            }
-                            key={index} 
-                            style={{marginBottom: "30px"}}>
-                                <Question 
-                                    number = {index + 1} 
-                                    item = {item} 
-                                    elementWidth = {elementWidth}
-                                />
+                <div style={{display:"flex"}} >
+                    <div className="wrapper__questions panel drop-shadow">
+                        {questions.map((item, index) => 
+                        <div ref={ref} key={index}>
+                            <div 
+                                className={
+                                    index >= startIndex * shownQuestionsNumber &&
+                                    index < (startIndex + 1) * shownQuestionsNumber ?
+                                    "" : "visualy-hidden"
+                                }                                
+                                style={{marginBottom: "30px"}}>
+                                    <Question 
+                                        number = {index + 1} 
+                                        item = {item} 
+                                        elementWidth = {elementWidth}
+                                    />
+                            </div>
+                        </div>
+                        )}
+                        <div style={{marginTop: "30px", textAlign: "right"}}>
+                            <FinishButton/>  
+                        </div>
+                        <div className="wrapper__bottom-controls">
+                            {arrowButton("backward-button", "Forum netiquette")} 
+                            <select className="jump-to-select drop-shadow" 
+                                value={selectedValue}
+                                onChange={handlerSelectionChange}>
+                                    <option disabled={true} value="">Jump to..</option>
+                                    {selectOptions.map((item, index) => 
+                                    <option value={`Page-${index + 1}`} 
+                                        key={index}>
+                                            {`Page-${index + 1}`}
+                                    </option>)}
+                            </select>
+                            {arrowButton("forward-button", "Share examples of digital...")} 
                         </div>
                     </div>
-                    )}
-                    {width - 300 > 1050 ? <CompleteNavigation progress="80" pagesNumber = {`${pagesNumber}`}/> : <></>}
-                    <div style={{marginTop: "30px", textAlign: "right"}}>
-                        <FinishButton/>  
-                    </div>
-                    <div className="bottom-controls__wrapper">
-                        {arrowButton("backward-button", "Forum netiquette")} 
-                        {/* PAGE SELECT */}
-                        <select className="jump-to-select drop-shadow" 
-                            value={selectedValue}
-                            onChange={handlerSelectionChange}>
-                                <option disabled={true} value="">Jump to..</option>
-                                {selectOptions.map((item, index) => 
-                                <option value={`Page-${index + 1}`} 
-                                    key={index}>
-                                        {`Page-${index + 1}`}
-                                </option>)}
-                        </select>
-                        {/*  */}
-                        {arrowButton("forward-button", "Share examples of digital...")} 
+                    <div className="wrapper__complete-navigation">
+                        <CompleteNavigation progress="80" pagesNumber = {`${pagesNumber}`}/>
                     </div>
                 </div>
             </div>        

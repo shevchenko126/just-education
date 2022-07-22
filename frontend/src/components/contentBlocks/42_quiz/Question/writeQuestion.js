@@ -1,5 +1,3 @@
-import '../styles.css';
-
 const WriteQuestion = (props) => {
     const item = props.item;
     const currentWidth = props.elementWidth - 60;  
