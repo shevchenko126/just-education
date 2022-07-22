@@ -19,6 +19,7 @@ from rest_framework import routers
 from courses.api import GetCourses
 from notifications.api import GetNotifications
 from registration.api import RegistrationData
+from account.views import CustomAuthData
 
 API_version = 1
 
@@ -30,4 +31,5 @@ router.register('registration', RegistrationData, 'registration')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(f'api/v{API_version}/', include(router.urls)),
+    path('customauth/', CustomAuthData.as_view()),
 ]
