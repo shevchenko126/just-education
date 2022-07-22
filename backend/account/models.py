@@ -22,10 +22,6 @@ class Teacher(models.Model):
     def __str__(self):
         return self.user.username
 
-    def get_full_name(self):
-        # used for serializers
-        return self.user.username
-
     class Meta:
         verbose_name = "викладач"
         verbose_name_plural = "викладачі"
