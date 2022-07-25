@@ -7,6 +7,17 @@ from account.models import Teacher
 from courses.inc.rating import RatingField
 
 
+class CourseCategory(models.Model):
+    title = models.CharField(verbose_name="назва категорії",
+                                     max_length=100, )
+     
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = "категорія"
+        verbose_name_plural = "категорії"
+        
 class Course(models.Model):
     title = models.CharField(verbose_name="назва", max_length=50)
     image = models.FileField(verbose_name="зображення",
@@ -20,7 +31,12 @@ class Course(models.Model):
                                null=True)
     rating = RatingField(verbose_name='рейтинг', blank=True, null=True)
     featured = models.BooleanField(verbose_name='рекомендований', default=False)
-    
+    category = models.ForeignKey(CourseCategory,
+                                       verbose_name="категорія",
+                                       related_name="course_category",
+                                       on_delete=models.CASCADE,
+                                       blank=True,
+                                       null=True)
 
     def __str__(self):
         return self.title
@@ -72,20 +88,3 @@ class CourseLecture(models.Model):
     class Meta:
         verbose_name = "лекція курсу"
         verbose_name_plural = "лекції курсів"
-
-class CourseCategory(models.Model):
-     title = models.CharField(verbose_name="назва категорії",
-                                     max_length=100, )
-     category = models.ForeignKey(Course,
-                                       verbose_name="категорія",
-                                       related_name="category_courses",
-                                       on_delete=models.CASCADE,
-                                       blank=True,
-                                       null=True)
-     
-     def __str__(self):
-        return self.title
-    
-     class Meta:
-        verbose_name = "категорія"
-        verbose_name_plural = "категорії"
