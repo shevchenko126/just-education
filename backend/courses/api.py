@@ -10,11 +10,10 @@ class GetCourses(viewsets.ModelViewSet):
     queryset = Course.objects.all()
 
     def list(self, request):
+        qs = self.queryset
         if request.GET.get('featured') == '1':
-            qs = self.queryset.filter(featured=True)
-        else:
-            # slicing is used to re-evaluate the queryset
-            qs = self.queryset[:]
+            qs = qs.filter(featured=True)
+            
         serializer = self.serializer_class(qs, many=True)
         return Response({
             'success': True,
