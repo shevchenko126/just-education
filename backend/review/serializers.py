@@ -14,4 +14,5 @@ class ReviewSerializer(serializers.ModelSerializer):
 
     def save(self, **kwargs):
         kwargs['user'] = self.fields['user_id'].get_default()
+        kwargs['rating'] = int(self.validated_data['rating'])
         super().save(**kwargs)
