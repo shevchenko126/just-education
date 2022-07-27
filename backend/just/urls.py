@@ -20,6 +20,7 @@ from courses.api import GetCourses
 from notifications.api import GetNotifications
 from registration.api import RegistrationData
 from review.api import GetReviews
+from account.views import CustomAuthData
 
 API_version = 1
 
