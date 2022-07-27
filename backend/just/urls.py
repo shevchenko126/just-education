@@ -33,4 +33,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path(f'api/v{API_version}/', include(router.urls)),
     path('customauth/', CustomAuthData.as_view()),
+    path('account/', include(('account.urls', 'account'))),
 ]
