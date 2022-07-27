@@ -11,10 +11,14 @@ class GetCourses(viewsets.ModelViewSet):
     queryset = Course.objects.all()
 
     def list(self, request):
+        qs = self.queryset
         if request.GET.get('featured') == '1':
-            qs = self.queryset.filter(featured=True)
-        if request.GET.get('category_id') == '1':
-            qs = qs.filter(category_id=True)
+            qs = qs.filter(featured=True)
+       
+        category = self.request.query_params('category_id')
+        if category:
+            qs = qs.filter(category=category)
+            
         serializer = self.serializer_class(qs, many=True)
         return Response({
             'success': True,
