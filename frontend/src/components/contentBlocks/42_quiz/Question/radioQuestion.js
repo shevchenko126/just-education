@@ -1,6 +1,4 @@
-import '../styles.css';
 import {useState} from 'react';
-
 
 const RadioQuestion = (props) => {
 
@@ -47,7 +45,7 @@ const RadioQuestion = (props) => {
             <div className="list__title p">Select one:</div>
             <ul className="list__style-none">                          
             {variants.map((item, index)=>(
-                <li className="list__item" key={`${index}-${item}`}>
+                <li className="list__item" key={index}>
                     <label>
                         <input
                             type="radio" id={index + 1}

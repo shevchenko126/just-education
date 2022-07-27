@@ -15,9 +15,10 @@ class GetCourses(viewsets.ModelViewSet):
         if request.GET.get('featured') == '1':
             qs = qs.filter(featured=True)
        
-        category = self.request.query_params('category_id')
+        category_id = self.request.query_params('category_id')
         if category:
-            qs = qs.filter(category=category)
+            qs = qs.filter(category_id=category_id)
+
             
         serializer = self.serializer_class(qs, many=True)
         return Response({

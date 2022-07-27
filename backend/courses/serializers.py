@@ -4,7 +4,7 @@ from courses.models import Course, CourseChapter, CourseLecture, CourseCategory
 
 
 class BaseCourseSerializer(serializers.ModelSerializer):
-    author_name = serializers.CharField(source='author.get_full_name')
+    author_name = serializers.CharField(source='author.user.get_full_name')
 
     class Meta:
         model = Course
