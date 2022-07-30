@@ -1,3 +1,4 @@
+import datetime
 from base64 import urlsafe_b64encode
 
 from django.contrib.auth import authenticate, get_user_model
@@ -7,6 +8,8 @@ from django.core.mail import send_mail
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
+from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.authtoken.models import Token
 from rest_framework.authtoken.views import ObtainAuthToken
@@ -77,56 +80,63 @@ def generate_token(email):
     return str(urlsafe_b64encode(bytes(token, encoding='utf8')), encoding='utf8')
 
 
-def password_forgot(request):
-    """Check if email exists and send the password reset link to email"""
-    email = request.GET.get('email')
-    if not email:
-        return HttpResponseBadRequest('Email must be provided')
-    token = generate_token(email)
+class PasswordForgot(View):
+    def get(self, request, *args, **kwargs):
+        """Check if email exists and send the password reset link to email"""
+        email = request.GET.get('email')
+        if not email:
+            return HttpResponseBadRequest('Email must be provided')
+        token = generate_token(email)
 
-    subject = 'Just - password reset link'
-    link = f'{request.scheme}://{request.get_host()}{reverse_lazy("account:password_reset")}?email={email}&token={token}'
-    message = f'To reset your password, follow the link: {link}'
-    recipient_list = [email]
-    from_email = None
+        subject = 'Just - password reset link'
+        link = f'{request.scheme}://{request.get_host()}{reverse_lazy("account:password_reset")}?email={email}&token={token}'
+        message = f'To reset your password, follow the link: {link}'
+        recipient_list = [email]
+        from_email = None
 
-    send_mail(subject, message, from_email, recipient_list=recipient_list)
-    return HttpResponse('Check your email')
-
-
-def password_reset(request):
-    """Process the reset link from the email. If ok, redirect to password change page"""
-    redirect_url = '/'  # temp
-    email = request.GET.get('email')
-    token_link = request.GET.get('token')
-    if not email or not token_link:
-        return HttpResponseBadRequest('No data provided')
-    if token_link == generate_token(email):
-        return redirect(redirect_url)
+        send_mail(subject, message, from_email, recipient_list=recipient_list)
+        return HttpResponse('Check your email')
 
 
-@csrf_exempt
-def password_change(request):
-    email = request.POST.get('email')
-    token = request.POST.get('token')
-    new_password = request.POST.get('new_password')
-    new_password_repeat = request.POST.get('new_password_repeat')
-
-    if not email or not token:
-        return HttpResponseBadRequest('Invalid data')
-
-    if not new_password or not new_password == new_password_repeat:
-        return HttpResponseBadRequest('Passwords mismatch')
-
-    if not token == generate_token(email):
+class PasswordReset(View):
+    def get(self, request, *args, **kwargs):
+        """Process the reset link from the email. If ok, redirect to password change page"""
+        redirect_url = '/'  # temp
+        email = request.GET.get('email')
+        token_link = request.GET.get('token')
+        if not email or not token_link:
+            return HttpResponseBadRequest('No data provided')
+        if token_link == generate_token(email):
+            return redirect(redirect_url)
         return HttpResponseBadRequest('Invalid token')
 
-    try:
-        validate_password(new_password)
-    except ValidationError as e:
-        return HttpResponseBadRequest('Password validation error: ' + str(e))
 
-    user = get_user_model().objects.get(email=email)
-    user.set_password(new_password)
-    user.save()
-    return HttpResponse('Password changed')
+@method_decorator(csrf_exempt, name='dispatch')
+class PasswordChange(View):
+    def post(self, request, *args, **kwargs):
+        """Change password (after validation) using default hashing method"""
+        email = request.POST.get('email')
+        token = request.POST.get('token')
+        new_password = request.POST.get('new_password')
+        new_password_repeat = request.POST.get('new_password_repeat')
+
+        if not email or not token:
+            return HttpResponseBadRequest('Invalid data')
+
+        if not new_password or not new_password == new_password_repeat:
+            return HttpResponseBadRequest('Passwords mismatch')
+
+        if not token == generate_token(email):
+            return HttpResponseBadRequest('Invalid token')
+
+        try:
+            validate_password(new_password)
+        except ValidationError as e:
+            return HttpResponseBadRequest('Password validation error: ' + str(e))
+
+        user = get_user_model().objects.get(email=email)
+        user.set_password(new_password)
+        # update last-login time to ensure the token is used only once
+        user.last_login = datetime.datetime.utcnow()
+        user.save()
+        return HttpResponse('Password changed')
