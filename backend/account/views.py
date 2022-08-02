@@ -1,10 +1,12 @@
 from django.shortcuts import render
-
-from django.shortcuts import render
+from rest_framework import status
+from rest_framework.views import APIView
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 from django.contrib.auth import authenticate
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
 from .models import Teacher, Student
 
 
@@ -57,3 +59,23 @@ class CustomAuthData(ObtainAuthToken):
             "is_teacher": Teacher.objects.filter(user=user).exists(),
             "is_student": Student.objects.filter(user=user).exists()
         })
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class PasswordChangeCabinet(APIView):
+    def post(self, request, *args, **kwargs):
+        try:
+            token = request.headers['token']
+            new_password = request.POST.get('new_password')
+            new_password_repeat = request.POST.get('new_password_repeat')
+            user = Token.objects.get(key=token).user
+            if new_password == new_password_repeat:
+                user.set_password(new_password)
+                user.save()
+                return Response('Password changed!', status=status.HTTP_200_OK)
+            else:
+                return Response('The new passwords do NOT match!',
+                                status=status.HTTP_400_BAD_REQUEST)
+        except KeyError:
+            return Response('No token provided!',
+                            status=status.HTTP_400_BAD_REQUEST)
