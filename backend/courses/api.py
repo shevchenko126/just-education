@@ -15,7 +15,7 @@ class GetCourses(viewsets.ModelViewSet):
         if request.GET.get('featured') == '1':
             qs = qs.filter(featured=True)
        
-        category_id = self.request.query_params('category_id')
+        category_id = self.request.query_params.get('category_id')
         if category:
             qs = qs.filter(category_id=category_id)
 
