@@ -1,9 +1,10 @@
+from dataclasses import field
 from rest_framework import serializers
-from courses.models import Course, CourseChapter, CourseLecture
+from courses.models import Course, CourseChapter, CourseLecture, CourseCategory
 
 
 class BaseCourseSerializer(serializers.ModelSerializer):
-    author_name = serializers.CharField(source='author.get_full_name')
+    author_name = serializers.CharField(source='author.user.get_full_name')
 
     class Meta:
         model = Course
@@ -30,3 +31,10 @@ class SingleCourseSerializer(BaseCourseSerializer):
     class Meta:
         model = Course
         fields = BaseCourseSerializer.Meta.fields + ['description', 'featured', 'chapters']
+
+class CategorySerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = CourseCategory
+        fields = ['id', 'title', 'category',]
+    
